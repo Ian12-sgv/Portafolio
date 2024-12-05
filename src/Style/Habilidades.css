@@ -1,0 +1,150 @@
+.Habilidades {
+  font-family: "Barlow", serif;
+  font-weight: 100;
+  font-size: 50px;
+  font-style: normal;
+  color: white;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.aprendiendo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15rem;
+  margin-top: 2rem;
+}
+
+.aprendiendo-front {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding-top: 20%;
+}
+
+.aprendiendo-back {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding-top: 20%;
+}
+
+.aprendiendo-complementos {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding-top: 20%;
+}
+
+.material-ui {
+  max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de las imágenes */
+}
+
+.icon-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.icon-container-aprendiendo {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 8rem;
+}
+
+.icon-text {
+  background-color: aqua;
+}
+
+@media (max-width: 1201px) {
+  .Habilidades {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 35px;
+    font-style: normal;
+    color: white;
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  .aprendiendo-container {
+    gap: 10rem;
+    margin-top: 2rem;
+    margin-left: 7rem;
+  }
+
+  .aprendiendo-front {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding-top: 20%;
+    margin-bottom: 5rem;
+  }
+
+  .aprendiendo-back {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding-top: 20%;
+    margin-bottom: 5rem;
+  }
+
+  .aprendiendo-complementos {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding-top: 20%;
+    margin-bottom: 5rem;
+  }
+
+  .material-ui {
+    max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
+  }
+
+  .icon-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .icon-container-aprendiendo {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 8rem;
+  }
+
+  .icon-text {
+    background-color: aqua;
+  }
+}
