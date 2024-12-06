@@ -40,16 +40,6 @@ function Proyectos() {
             verProyecto="https://ianfrancodev.netlify.app/"
           />
         </div>
-        <div>
-          <Proyecto
-            src={FoodTruck}
-            titulo="Mi Portafolio 2"
-            descripcion="Este es mi portafolio, donde puedes ver mis proyectos y mi informacion personal"
-            tecnoligias={["React", "Node", "Express"]}
-            git="https://github.com/Ian12-sgv/Portafolio"
-            verProyecto="https://ianfrancodev.netlify.app/"
-          />
-        </div>
       </div>
     </div>
   );
