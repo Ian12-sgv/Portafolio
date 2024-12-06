@@ -7,7 +7,7 @@ import Portafolio from "../assets/Portafolio.png";
 function Proyectos() {
   return (
     <div className="Proyectos">
-      Proyecto
+      Proyectos
       <div className="proyectos-container">
         <div>
           <Proyecto
