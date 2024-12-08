@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 35px;
 }
 .download-button {
   width: 25px;
@@ -29,11 +29,11 @@
 }
 
 .text-container {
-  width: 580px; /* Ancho máximo del contenedor */
-  height: 130px; /* Altura fija del contenedor */
-  white-space: normal; /* Permite que el texto se envuelva */
-  word-wrap: break-word; /* Permite que las palabras se rompan para ajustar el ancho */
-  overflow: hidden; /* Oculta el contenido que exceda la altura */
+  width: 580px;
+  height: 110px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
   font-family: "Barlow", serif;
   font-weight: 100;
   font-size: 50px;
@@ -131,7 +131,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     width: 100%;
   }
   .download-button {
@@ -144,8 +144,8 @@
   }
 
   .text-container {
-    width: 500px;
-    height: 130px;
+    width: 480px;
+    height: 100px;
     white-space: normal;
     word-wrap: break-word;
     overflow: hidden;
@@ -215,7 +215,365 @@
     align-items: center;
     border-radius: 10px;
     width: 200px;
-    margin-top: 15px;
+    margin-top: 50px;
+    padding-left: 10px;
+    display: flex;
+  }
+
+  .unlock-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .presentacion-container {
+    width: 100%;
+    height: 100%;
+    color: white;
+  }
+
+  .presentacion-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mi-presentacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+  .download-button {
+    width: 25px;
+  }
+
+  .cv {
+    display: flex;
+    align-items: center;
+  }
+
+  .text-container {
+    width: 350px;
+    height: 100px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 40px;
+    font-style: normal;
+    color: #20dad8;
+  }
+
+  .imagen {
+    padding-left: 80px;
+    margin: 100px;
+  }
+
+  .perfilImg {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 1px solid #020024;
+    background: rgb(2, 0, 36);
+    background-image: linear-gradient(
+      to bottom,
+      #020024,
+      #050c2e,
+      #031539,
+      #021b44,
+      #00224f
+    );
+  }
+
+  .imagen-perfil {
+    width: 100%;
+    height: 100%;
+  }
+
+  .nombre {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 50px;
+    font-style: normal;
+  }
+
+  .profesion {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 80px;
+    font-style: normal;
+  }
+
+  .redes {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .disponible {
+    background-color: #128334;
+    color: rgb(255, 255, 255);
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 15px;
+    font-style: normal;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 200px;
+    margin-top: 24%;
+    padding-left: 10px;
+    display: flex;
+  }
+
+  .unlock-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .presentacion-container {
+    width: 100%;
+    height: 100%;
+    color: white;
+  }
+
+  .presentacion-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mi-presentacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+  .download-button {
+    width: 25px;
+  }
+
+  .cv {
+    display: flex;
+    align-items: center;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 20px;
+    font-style: normal;
+  }
+
+  .text-container {
+    width: 410px;
+    height: 100px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 40px;
+    font-style: normal;
+    color: #20dad8;
+  }
+
+  .imagen {
+    padding-left: 80px;
+    margin: 50px;
+  }
+
+  .perfilImg {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 1px solid #020024;
+    background: rgb(2, 0, 36);
+    background-image: linear-gradient(
+      to bottom,
+      #020024,
+      #050c2e,
+      #031539,
+      #021b44,
+      #00224f
+    );
+  }
+
+  .imagen-perfil {
+    width: 100%;
+    height: 100%;
+  }
+
+  .nombre {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 50px;
+    font-style: normal;
+  }
+
+  .profesion {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 80px;
+    font-style: normal;
+  }
+
+  .redes {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .disponible {
+    background-color: #128334;
+    color: rgb(255, 255, 255);
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 20px;
+    font-style: normal;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 20rem;
+    margin-top: 10%;
+    padding-left: 10px;
+    display: flex;
+  }
+
+  .unlock-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .presentacion-container {
+    width: 100%;
+    height: 100%;
+    color: white;
+  }
+
+  .presentacion-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mi-presentacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+  .download-button {
+    width: 25px;
+  }
+
+  .cv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text-container {
+    width: 500px;
+    height: 100px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 45px;
+    font-style: normal;
+    color: #20dad8;
+    text-align: center;
+    margin-left: 3rem;
+  }
+
+  .imagen {
+    padding-left: 0;
+    margin: 100px;
+  }
+
+  .perfilImg {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 1px solid #020024;
+    background: rgb(2, 0, 36);
+    background-image: linear-gradient(
+      to bottom,
+      #020024,
+      #050c2e,
+      #031539,
+      #021b44,
+      #00224f
+    );
+  }
+
+  .imagen-perfil {
+    width: 100%;
+    height: 100%;
+  }
+
+  .nombre {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 50px;
+    font-style: normal;
+    text-align: center;
+  }
+
+  .profesion {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 80px;
+    font-style: normal;
+    text-align: center;
+  }
+
+  .redes {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+  }
+
+  .disponible {
+    background-color: #128334;
+    color: rgb(255, 255, 255);
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 1.8rem;
+    font-style: normal;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 22rem;
+    margin-top: 5%;
     padding-left: 10px;
     display: flex;
   }

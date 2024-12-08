@@ -9,46 +9,82 @@
 }
 
 .aprendiendo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15rem;
-  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  margin-bottom: 5rem;
+  padding-bottom: 2rem;
 }
 
 .aprendiendo-front {
   display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+.titulo {
+  font-family: "Barlow", serif;
+  font-weight: 100;
+  font-size: 50px;
+  font-style: normal;
+  color: white;
+  text-align: center;
+}
+
+.front {
+  display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
   gap: 100px;
-  padding-top: 20%;
+  margin-top: 1rem;
+  margin-left: 5rem;
 }
 
 .aprendiendo-back {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-  padding-top: 20%;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  width: 100%;
+  height: 100%;
 }
 
-.aprendiendo-complementos {
+.back {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
   gap: 100px;
-  padding-top: 20%;
+  margin-top: 1rem;
+  margin-left: 5rem;
+}
+.aprendiendo-complementos {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  width: 100%;
+  height: 100%;
 }
 
+.complementos {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  margin-top: 1rem;
+  margin-left: 5rem;
+}
 .material-ui {
-  max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
-  height: auto; /* Mantiene la proporción de las imágenes */
+  max-width: 100%;
+  height: auto;
 }
 
 .icon-container {
@@ -84,47 +120,430 @@
   }
 
   .aprendiendo-container {
-    gap: 10rem;
-    margin-top: 2rem;
-    margin-left: 7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 5rem;
+    padding-bottom: 2rem;
+  }
+  .aprendiendo-front {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 100%;
   }
 
-  .aprendiendo-front {
+  .titulo {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 50px;
+    font-style: normal;
+    color: white;
+    text-align: center;
+  }
+
+  .front {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
     gap: 100px;
-    padding-top: 20%;
-    margin-bottom: 5rem;
+    margin-top: 1rem;
+    margin-left: 0rem;
   }
 
   .aprendiendo-back {
     display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+
+  .back {
+    display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
     gap: 100px;
-    padding-top: 20%;
-    margin-bottom: 5rem;
+    margin-top: 1rem;
+    margin-left: 0rem;
   }
 
   .aprendiendo-complementos {
     display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+
+  .complementos {
+    display: grid;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
     gap: 100px;
-    padding-top: 20%;
-    margin-bottom: 5rem;
+    margin-top: 1rem;
+    margin-left: 0rem;
   }
 
   .material-ui {
-    max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de las imágenes */
+    max-width: 100%;
+    height: auto;
+  }
+
+  .icon-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .icon-container-aprendiendo {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 8rem;
+  }
+
+  .icon-text {
+    background-color: aqua;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .Habilidades {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 30px;
+    font-style: normal;
+    color: white;
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  .aprendiendo-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 5rem;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  .aprendiendo-front {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+
+  .titulo {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 40px;
+    font-style: normal;
+    color: white;
+    text-align: center;
+  }
+
+  .front {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 1rem;
+    margin-left: 0rem;
+  }
+
+  .aprendiendo-back {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+
+  .back {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 1rem;
+    margin-left: 0rem;
+  }
+
+  .aprendiendo-complementos {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+
+  .complementos {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 1rem;
+    margin-left: 0rem;
+  }
+  .material-ui {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .icon-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .icon-container-aprendiendo {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 8rem;
+  }
+
+  .icon-text {
+    background-color: aqua;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .Habilidades {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 30px;
+    font-style: normal;
+    color: white;
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  .aprendiendo-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    width: 96%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .aprendiendo-front {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+
+  .titulo {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 40px;
+    font-style: normal;
+    color: white;
+    text-align: center;
+  }
+
+  .front {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 1rem;
+    margin-left: 5rem;
+  }
+
+  .aprendiendo-back {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+
+  .back {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 1rem;
+    margin-left: 5rem;
+  }
+
+  .aprendiendo-complementos {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 90%;
+    margin-left: 15rem;
+  }
+
+  .complementos {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 0rem;
+    margin-left: 0rem;
+  }
+  .material-ui {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .icon-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .icon-container-aprendiendo {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 8rem;
+  }
+
+  .icon-text {
+    background-color: aqua;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .Habilidades {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 30px;
+    font-style: normal;
+    color: white;
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  .aprendiendo-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .aprendiendo-front {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 60%;
+    height: 100%;
+  }
+
+  .titulo {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 40px;
+    font-style: normal;
+    color: white;
+    text-align: center;
+    margin-left: 1rem;
+    width: 100%;
+  }
+
+  .front {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin-top: 1rem;
+    width: 100%;
+    margin-left: 1.5rem;
+  }
+
+  .aprendiendo-back {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+
+  .back {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin-top: 1rem;
+  }
+
+  .aprendiendo-complementos {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 90%;
+    margin-left: 1rem;
+  }
+
+  .complementos {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin-top: 1rem;
+  }
+
+  .material-ui {
+    max-width: 100%;
+    height: auto;
   }
 
   .icon-container {

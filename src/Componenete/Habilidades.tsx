@@ -17,9 +17,9 @@ function Habilidades() {
     <div className="Habilidades">
       HABILIADES
       <div className="aprendiendo-container">
-        <div>
-          Front-end
-          <div className="aprendiendo-front">
+        <div className="aprendiendo-front">
+          <h1 className="titulo">Front-end</h1>
+          <div className="front">
             <div
               style={{
                 backgroundColor: "#1572B6",
@@ -155,9 +155,10 @@ function Habilidades() {
             </div>
           </div>
         </div>
-        <div>
-          Back-end
-          <div className="aprendiendo-back">
+
+        <div className="aprendiendo-back">
+          <h1 className="titulo">Back-end</h1>
+          <div className="back">
             <div
               style={{
                 backgroundColor: "#1572B6",
@@ -275,9 +276,10 @@ function Habilidades() {
             </div>
           </div>
         </div>
-        <div>
-          Complememnetarias
-          <div className="aprendiendo-complementos">
+
+        <div className="aprendiendo-complementos">
+          <h1 className="titulo">Complementos</h1>
+          <div className="complementos">
             <div
               style={{
                 backgroundColor: "White",

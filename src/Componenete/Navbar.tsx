@@ -1,9 +1,19 @@
 // src/components/Navbar.tsx
 import React, { useState, useEffect } from "react";
+import Enlace from "./Enlace";
+import {
+  faHome,
+  faLayerGroup,
+  faBookOpen,
+  faLaptopCode,
+  faBriefcase,
+} from "@fortawesome/free-solid-svg-icons";
+
 import "../Style/Navbar.css";
 
 const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("");
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,39 +36,67 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="navbar">
-      {" "}
-      <a
-        href="#presentacion"
-        className={activeSection === "presentacion" ? "active" : ""}
-      >
-        Presentación
-      </a>{" "}
-      <a
-        href="#habilidades"
-        className={activeSection === "habilidades" ? "active" : ""}
-      >
-        Habilidades
-      </a>{" "}
-      <a
-        href="#proyectos"
-        className={activeSection === "proyectos" ? "active" : ""}
-      >
-        Proyectos
-      </a>{" "}
-      <a
-        href="#formacion"
-        className={activeSection === "formacion" ? "active" : ""}
-      >
-        Formación
-      </a>{" "}
-      <a
-        href="#servicio"
-        className={activeSection === "servicio" ? "active" : ""}
-      >
-        Servicio
-      </a>{" "}
+      <div className="floating-bubble" onClick={toggleMenu}>
+        &#9776;
+      </div>
+
+      <ul className={`nav-links ${isOpen ? "open" : ""}`}>
+        <li>
+          <a
+            href="#presentacion"
+            className={activeSection === "presentacion" ? "active" : ""}
+            onClick={handleLinkClick}
+          >
+            <Enlace icon={faHome} text="Inicio" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="#habilidades"
+            className={activeSection === "habilidades" ? "active" : ""}
+            onClick={handleLinkClick}
+          >
+            <Enlace icon={faLayerGroup} text="Habilidades" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="#proyectos"
+            className={activeSection === "proyectos" ? "active" : ""}
+            onClick={handleLinkClick}
+          >
+            <Enlace icon={faLaptopCode} text="Proyectos" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="#formacion"
+            className={activeSection === "formacion" ? "active" : ""}
+            onClick={handleLinkClick}
+          >
+            <Enlace icon={faBookOpen} text="Formacion" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="#servicio"
+            className={activeSection === "servicio" ? "active" : ""}
+            onClick={handleLinkClick}
+          >
+            <Enlace icon={faBriefcase} text="Servicios" />
+          </a>
+        </li>
+      </ul>
     </nav>
   );
 };

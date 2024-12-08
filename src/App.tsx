@@ -9,11 +9,11 @@ import Navbar from "./Componenete/Navbar";
 function App() {
   return (
     <>
+      {" "}
       <div className="portafolio">
-        <nav>
-          <Navbar />
-        </nav>
+        <Navbar />{" "}
         <main className="main">
+          {" "}
           <section id="presentacion" className="presentacion">
             {" "}
             <Presentacion />{" "}
@@ -33,19 +33,18 @@ function App() {
           <section id="servicio" className="servicio">
             {" "}
             <Servicio />{" "}
-          </section>
-        </main>
+          </section>{" "}
+        </main>{" "}
         <footer className="footer">
+          {" "}
           <div className="contact">
-            <div>git</div>
-            <div>correo</div>
-            <div>linkedin</div>
-            <div>whatsapp</div>
-          </div>
-        </footer>
-      </div>
+            {" "}
+            <div>git</div> <div>correo</div> <div>linkedin</div>{" "}
+            <div>whatsapp</div>{" "}
+          </div>{" "}
+        </footer>{" "}
+      </div>{" "}
     </>
   );
 }
-
 export default App;
