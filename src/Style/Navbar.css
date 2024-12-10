@@ -202,8 +202,76 @@ html {
     display: none;
     gap: 1rem;
     flex-direction: column;
-    width: 17%;
+    width: 50%;
     height: 55rem;
+    background-image: linear-gradient(to bottom, #020024, #020024);
+    position: fixed;
+    top: 4%;
+    left: 0;
+    z-index: 1000;
+    align-items: start;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 1.5rem;
+    font-style: normal;
+    border: 0px solid #1c6ea4;
+    border-radius: 0px 40px 40px 0px;
+    -webkit-box-shadow: 1px 2px 16px -5px #000000;
+    box-shadow: 1px 2px 16px -5px #000000;
+  }
+  .nav-links.open {
+    display: flex;
+    margin: 0;
+    padding: 1rem;
+  }
+  .nav-links li {
+    text-align: center;
+  }
+
+  .navbar a {
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+  }
+  .navbar a.active {
+    color: white;
+  }
+  .close-button button {
+    background-color: white;
+    color: red;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .floating-bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 70px;
+    left: 20px;
+    width: 10px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .nav-links {
+    display: none;
+    gap: 1rem;
+    flex-direction: column;
+    width: 40%;
+    height: 89%;
     background-image: linear-gradient(to bottom, #020024, #020024);
     position: fixed;
     top: 4%;

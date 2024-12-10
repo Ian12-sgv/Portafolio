@@ -12,6 +12,7 @@ import laravel from "../assets/svg/laravel.svg";
 import mysql from "../assets/svg/Mysql.svg";
 import node from "../assets/svg/node.svg";
 import git from "../assets/svg/git.svg";
+import vite from "../assets/svg/Vite.svg";
 function Habilidades() {
   return (
     <div className="Habilidades">
@@ -301,6 +302,29 @@ function Habilidades() {
                 }}
               >
                 Git
+              </div>
+            </div>
+            <div
+              style={{
+                backgroundColor: "White",
+                borderRadius: "15px",
+                display: "inline-block",
+                width: "60px",
+                height: "60px",
+                paddingTop: "10px",
+              }}
+            >
+              <Icon src={vite} />
+              <div
+                style={{
+                  textAlign: "center",
+                  fontSize: "25px",
+                  width: "110px",
+                  height: "40px",
+                  marginLeft: "-25px",
+                }}
+              >
+                Vite
               </div>
             </div>
           </div>

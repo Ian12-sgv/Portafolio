@@ -19,6 +19,7 @@ function Proyectos() {
             verProyecto="https://camiondecomida.netlify.app/"
           />
         </div>
+
         <div>
           <Proyecto
             src={V8}

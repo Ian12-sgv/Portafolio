@@ -23,3 +23,10 @@
     padding-right: 1rem;
   }
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .icon {
+    display: flex;
+    padding-right: 1rem;
+  }
+}
