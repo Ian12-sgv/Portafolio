@@ -605,14 +605,14 @@
   }
 
   .text-container {
-    width: 500px;
+    width: 400px;
     height: 100px;
     white-space: normal;
     word-wrap: break-word;
     overflow: hidden;
     font-family: "Barlow", serif;
     font-weight: 100;
-    font-size: 45px;
+    font-size: 30px;
     font-style: normal;
     color: #20dad8;
     text-align: center;
@@ -637,7 +637,7 @@
   .nombre {
     font-family: "Barlow", serif;
     font-weight: 100;
-    font-size: 50px;
+    font-size: 30px;
     font-style: normal;
     text-align: center;
   }
@@ -645,7 +645,7 @@
   .profesion {
     font-family: "Barlow", serif;
     font-weight: 100;
-    font-size: 80px;
+    font-size: 30px;
     font-style: normal;
     text-align: center;
   }
@@ -669,7 +669,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    width: 22rem;
+    width: 70%;
     margin-top: 5%;
     padding-left: 10px;
     display: flex;
