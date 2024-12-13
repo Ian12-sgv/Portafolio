@@ -5,17 +5,19 @@
   font-style: normal;
   color: white;
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 5%;
+
+  border-bottom: 1px solid var(--border-button-color);
 }
 
 .aprendiendo-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10rem;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5%;
+  margin-top: 2%;
   margin-bottom: 5rem;
   padding-bottom: 2rem;
+  justify-content: center;
 }
 
 .aprendiendo-front {
@@ -37,12 +39,12 @@
 
 .front {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
   gap: 100px;
-  margin-top: 1rem;
+  margin-top: 15%;
   margin-left: 5rem;
 }
 
@@ -56,8 +58,8 @@
 
 .back {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
   gap: 100px;
@@ -74,8 +76,8 @@
 
 .complementos {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
   gap: 100px;
@@ -92,7 +94,7 @@
   justify-content: center;
   align-items: center;
   gap: 60px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .icon-container-aprendiendo {
@@ -100,7 +102,7 @@
   justify-content: center;
   align-items: center;
   gap: 60px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   margin-bottom: 8rem;
 }
 
@@ -121,10 +123,9 @@
 
   .aprendiendo-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 4rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5%;
+    justify-content: center;
     margin-bottom: 5rem;
     padding-bottom: 2rem;
   }
@@ -147,8 +148,8 @@
 
   .front {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
     gap: 100px;
@@ -166,8 +167,8 @@
 
   .back {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
     gap: 100px;
@@ -185,8 +186,8 @@
 
   .complementos {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
     gap: 100px;
@@ -204,7 +205,7 @@
     justify-content: center;
     align-items: center;
     gap: 60px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .icon-container-aprendiendo {
@@ -212,7 +213,7 @@
     justify-content: center;
     align-items: center;
     gap: 60px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     margin-bottom: 8rem;
   }
 
@@ -234,10 +235,9 @@
 
   .aprendiendo-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 4rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5%;
+    justify-content: center;
     margin-bottom: 5rem;
     padding-bottom: 2rem;
     margin-top: 2rem;
@@ -261,8 +261,8 @@
 
   .front {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
     gap: 100px;
@@ -280,8 +280,8 @@
 
   .back {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
     gap: 100px;
@@ -299,8 +299,8 @@
 
   .complementos {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
     gap: 100px;
@@ -317,7 +317,7 @@
     justify-content: center;
     align-items: center;
     gap: 60px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .icon-container-aprendiendo {
@@ -325,7 +325,7 @@
     justify-content: center;
     align-items: center;
     gap: 60px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     margin-bottom: 8rem;
   }
 
@@ -343,27 +343,25 @@
     color: white;
     text-align: center;
     margin-top: 4rem;
+    width: 100%;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-button-color);
   }
 
   .aprendiendo-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5%;
     margin-bottom: 0rem;
     padding-bottom: 0rem;
     margin-top: 2rem;
-    margin-left: 2rem;
-    width: 96%;
-    align-items: center;
+    width: 100%;
     justify-content: center;
-    text-align: center;
   }
   .aprendiendo-front {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
+    display: inline-block;
     width: 100%;
-    height: 100%;
   }
 
   .titulo {
@@ -377,77 +375,48 @@
 
   .front {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    width: 100%;
+    margin-left: 12%;
     margin-top: 1rem;
-    margin-left: 5rem;
   }
 
   .aprendiendo-back {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
+    display: inline-block;
     width: 100%;
-    height: 100%;
   }
 
   .back {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
-    gap: 100px;
+
+    margin-left: 12%;
     margin-top: 1rem;
-    margin-left: 5rem;
   }
 
   .aprendiendo-complementos {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
+    display: inline-block;
     width: 100%;
-    height: 90%;
-    margin-left: 15rem;
+    margin-left: 60%;
   }
 
   .complementos {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
-    gap: 100px;
-    margin-top: 0rem;
-    margin-left: 0rem;
+    margin-left: 15%;
   }
   .material-ui {
     max-width: 100%;
     height: auto;
-  }
-
-  .icon-container {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .icon-container-aprendiendo {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 8rem;
-  }
-
-  .icon-text {
-    background-color: aqua;
   }
 }
 
@@ -460,27 +429,22 @@
     color: white;
     text-align: center;
     margin-top: 4rem;
+    width: 100%;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-button-color);
   }
 
   .aprendiendo-container {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 4rem;
-    margin-bottom: 0rem;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0%;
+    margin-bottom: 10%;
     padding-bottom: 0rem;
-    width: 70%;
-    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
     justify-content: center;
-    text-align: center;
   }
-  .aprendiendo-front {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    width: 60%;
-    height: 100%;
-  }
-
   .titulo {
     font-family: "Barlow", serif;
     font-weight: 100;
@@ -488,83 +452,47 @@
     font-style: normal;
     color: white;
     text-align: center;
-    margin-left: 1rem;
     width: 100%;
   }
-
   .front {
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    width: 50%;
+    margin-left: 25%;
     margin-top: 1rem;
-    width: 100%;
-    margin-left: 1.5rem;
   }
 
   .aprendiendo-back {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
+    display: inline-block;
     width: 100%;
-    height: 100%;
   }
 
   .back {
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
-    gap: 5rem;
-    margin-top: 1rem;
+    width: 50%;
+    margin-left: 25%;
   }
 
   .aprendiendo-complementos {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
+    display: inline-block;
     width: 100%;
-    height: 90%;
-    margin-left: 1rem;
   }
 
   .complementos {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
-    gap: 5rem;
-    margin-top: 1rem;
-  }
-
-  .material-ui {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .icon-container {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .icon-container-aprendiendo {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 8rem;
-  }
-
-  .icon-text {
-    background-color: aqua;
+    width: 50%;
+    margin-left: 25%;
   }
 }
 
@@ -577,110 +505,69 @@
     color: white;
     text-align: center;
     margin-top: 4rem;
+    width: 100%;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-button-color);
   }
 
   .aprendiendo-container {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 4rem;
-    margin-bottom: 0rem;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0%;
+    margin-bottom: 10%;
     padding-bottom: 0rem;
-    width: 70%;
-    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
     justify-content: center;
-    text-align: center;
   }
-  .aprendiendo-front {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    width: 60%;
-    height: 100%;
-  }
-
   .titulo {
     font-family: "Barlow", serif;
     font-weight: 100;
-    font-size: 40px;
+    font-size: 35px;
     font-style: normal;
     color: white;
     text-align: center;
-    margin-left: 1rem;
     width: 100%;
   }
-
   .front {
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    width: 50%;
+    margin-left: 25%;
     margin-top: 1rem;
-    width: 100%;
-    margin-left: 1.5rem;
   }
 
   .aprendiendo-back {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
+    display: inline-block;
     width: 100%;
-    height: 100%;
   }
 
   .back {
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
-    gap: 5rem;
-    margin-top: 1rem;
+    width: 50%;
+    margin-left: 25%;
   }
 
   .aprendiendo-complementos {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
+    display: inline-block;
     width: 100%;
-    height: 90%;
-    margin-left: 1rem;
   }
 
   .complementos {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
-    gap: 5rem;
-    margin-top: 1rem;
-  }
-
-  .material-ui {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .icon-container {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .icon-container-aprendiendo {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 8rem;
-  }
-
-  .icon-text {
-    background-color: aqua;
+    width: 50%;
+    margin-left: 27%;
   }
 }

@@ -6,8 +6,9 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
-  background-image: linear-gradient(to bottom, #020024, #020024);
+  background-color: #01081f;
   transition: background-color 0.3s ease;
+  border-bottom: 1px solid rgb(126, 126, 126);
 }
 .navbar a {
   color: white;
@@ -45,7 +46,7 @@ html {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-image: linear-gradient(to bottom, #020024, #020024);
+    background-color: #01081f;
     transition: background-color 0.3s ease;
   }
 
@@ -86,7 +87,7 @@ html {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-image: linear-gradient(to bottom, #020024, #020024);
+    background-color: #01081f;
     transition: background-color 0.3s ease;
   }
 
@@ -94,8 +95,6 @@ html {
     color: white;
     list-style-type: none;
     text-decoration: none;
-    padding: 0;
-    margin: 0;
   }
   .navbar a.active {
     color: #20dad8;
@@ -120,23 +119,26 @@ html {
     align-items: center;
     justify-content: center;
     position: fixed;
-    top: 70px;
-    left: 20px;
-    width: 10px;
+    top: 12%;
+    left: -15px;
+    width: 12%;
+    padding-left: 10px;
     height: 60px;
     border-radius: 50%;
     color: white;
-    font-size: 28px;
+    font-size: 40px;
     cursor: pointer;
     z-index: 1000;
+    border-radius: 80px;
+    background-color: #01081f;
   }
   .nav-links {
     display: none;
     gap: 2rem;
     flex-direction: column;
-    width: 15%;
-    height: 106vh;
-    background-image: linear-gradient(to bottom, #020024, #020024);
+    width: 25%;
+    height: 80%;
+    background-color: #01081f;
     position: fixed;
     top: 8%;
     left: 0;
@@ -148,7 +150,7 @@ html {
     font-style: normal;
     border: 0px solid #1c6ea4;
     border-radius: 0px 40px 40px 0px;
-    -webkit-box-shadow: 1px 2px 16px -5px #000000;
+    -webkit-box-shadow: 1px 2px 16px -5px #1b1b1b;
     box-shadow: 1px 2px 16px -5px #000000;
   }
   .nav-links.open {
@@ -188,23 +190,25 @@ html {
     align-items: center;
     justify-content: center;
     position: fixed;
-    top: 70px;
-    left: 20px;
-    width: 10px;
+    top: 12%;
+    left: -15px;
+    width: 12%;
+    padding-left: 10px;
     height: 60px;
     border-radius: 50%;
     color: white;
-    font-size: 30px;
+    font-size: 40px;
     cursor: pointer;
     z-index: 1000;
+    border-radius: 80px;
+    background-color: #01081f;
   }
   .nav-links {
     display: none;
     gap: 1rem;
     flex-direction: column;
-    width: 50%;
-    height: 55rem;
-    background-image: linear-gradient(to bottom, #020024, #020024);
+    width: 30%;
+    height: 80%;
     position: fixed;
     top: 4%;
     left: 0;
@@ -215,6 +219,7 @@ html {
     font-size: 1.5rem;
     font-style: normal;
     border: 0px solid #1c6ea4;
+    background-color: #01081f;
     border-radius: 0px 40px 40px 0px;
     -webkit-box-shadow: 1px 2px 16px -5px #000000;
     box-shadow: 1px 2px 16px -5px #000000;
@@ -256,23 +261,25 @@ html {
     align-items: center;
     justify-content: center;
     position: fixed;
-    top: 70px;
-    left: 20px;
-    width: 10px;
+    top: 12%;
+    left: 1px;
+    width: 12%;
+    padding-left: 10px;
     height: 60px;
     border-radius: 50%;
     color: white;
-    font-size: 30px;
+    font-size: 40px;
     cursor: pointer;
     z-index: 1000;
+    border-radius: 80px;
+    background-color: #01081f;
   }
   .nav-links {
     display: none;
     gap: 1rem;
     flex-direction: column;
-    width: 40%;
-    height: 89%;
-    background-image: linear-gradient(to bottom, #020024, #020024);
+    width: 30%;
+    height: 90%;
     position: fixed;
     top: 4%;
     left: 0;
@@ -280,9 +287,10 @@ html {
     align-items: start;
     font-family: "Barlow", serif;
     font-weight: 100;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-style: normal;
     border: 0px solid #1c6ea4;
+    background-color: #01081f;
     border-radius: 0px 40px 40px 0px;
     -webkit-box-shadow: 1px 2px 16px -5px #000000;
     box-shadow: 1px 2px 16px -5px #000000;

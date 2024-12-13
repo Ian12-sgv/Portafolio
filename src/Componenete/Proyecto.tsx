@@ -8,7 +8,6 @@ interface ProyectoProps {
   src: string;
   titulo: string;
   descripcion: string;
-  tecnoligias: string[];
   git: string;
   verProyecto: string;
 }
@@ -17,7 +16,7 @@ const Proyecto: React.FC<ProyectoProps> = ({
   src,
   titulo,
   descripcion,
-  tecnoligias,
+
   git,
   verProyecto,
 }) => {
@@ -29,11 +28,7 @@ const Proyecto: React.FC<ProyectoProps> = ({
       <div className="proyecto-info">
         <div className="proyecto-titulo">{titulo}</div>
         <p className="proyecto-descripcion">{descripcion}</p>
-        <ul className="proyecto-tecnoligias">
-          {tecnoligias.map((tecnologia, index) => (
-            <li key={index}>{tecnologia}</li>
-          ))}
-        </ul>
+
         <div className="proyecto-botones">
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <p>GitHub</p>

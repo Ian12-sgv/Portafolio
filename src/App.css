@@ -1,57 +1,55 @@
+:root {
+  --primary-bg-color: #01081f;
+  --border-color: rgb(126, 126, 126);
+
+  --contact-padding: 10px;
+}
+
 .portafolio {
   width: 100%;
   display: grid;
-  grid-template-rows: auto 1fr auto; /* Ajustado para que el header y footer tengan tamaño automático */
-  grid-template-areas: "header" "main" "footer";
-  background-image: linear-gradient(
-    to bottom,
-    #020024,
-    #050c2e,
-    #031539,
-    #021b44,
-    #00224f
-  );
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "main" "footer";
+  background-color: var(--primary-bg-color);
 }
 
 .main {
   grid-area: main;
   display: grid;
   height: 100%;
+  width: 100%;
   grid-template-rows: auto;
 }
+
 .footer {
   grid-area: footer;
-  background-color: green;
+  height: 100%;
+  width: 100%;
 }
 
 .contact {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: var(--contact-padding);
 }
 
-.presentacion {
-  border-bottom: 1px solid white;
-  padding-bottom: 3rem;
-}
-
-.habilidades {
-  padding-top: 10px;
-  border-bottom: 1px solid white;
-  padding-bottom: 10px;
-}
-
+.presentacion,
+.habilidades,
 .proyectos {
-  border-bottom: 1px solid white;
-  padding-bottom: 10px;
+  width: 100%;
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 320px) and (max-width: 480px),
+  (min-width: 481px) and (max-width: 768px),
+  (min-width: 769px) and (max-width: 1024px),
+  (min-width: 1025px) and (max-width: 1200px),
+  (min-width: 1201px) {
   .portafolio {
     width: 100%;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    grid-template-areas: "header" "main" "footer";
+    grid-template-areas: "main" "footer";
   }
 
   .main {
@@ -60,18 +58,13 @@
     height: 100%;
     width: 100%;
     grid-template-rows: auto;
-    background-image: linear-gradient(
-      to bottom,
-      #020024,
-      #050c2e,
-      #031539,
-      #021b44,
-      #00224f
-    );
+    background-color: var(--primary-bg-color);
   }
+
   .footer {
     grid-area: footer;
-    background-color: green;
+    background-color: var(--footer-bg-color);
+    width: 100%;
   }
 
   .contact {
@@ -80,223 +73,11 @@
     align-items: center;
   }
 
-  .presentacion {
-    border-bottom: 1px solid white;
-    padding-bottom: 3rem;
-  }
-
-  .habilidades {
-    padding-top: 10px;
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
-  }
-
+  .presentacion,
+  .habilidades,
   .proyectos {
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1200px) {
-  .portafolio {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 0%;
     width: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas: "header" "main" "footer";
-  }
-
-  .main {
-    grid-area: main;
-    display: grid;
-    height: 100%;
-    width: 100%;
-    grid-template-rows: auto;
-    background-image: linear-gradient(
-      to bottom,
-      #020024,
-      #050c2e,
-      #031539,
-      #021b44,
-      #00224f
-    );
-  }
-  .footer {
-    grid-area: footer;
-    background-color: green;
-  }
-
-  .contact {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .presentacion {
-    border-bottom: 1px solid white;
-    padding-bottom: 3rem;
-  }
-
-  .habilidades {
-    padding-top: 10px;
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
-  }
-
-  .proyectos {
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .portafolio {
-    width: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas: "header" "main" "footer";
-  }
-
-  .main {
-    grid-area: main;
-    display: grid;
-    height: 100%;
-    width: 100%;
-    grid-template-rows: auto;
-    background-image: linear-gradient(
-      to bottom,
-      #020024,
-      #050c2e,
-      #031539,
-      #021b44,
-      #00224f
-    );
-  }
-  .footer {
-    grid-area: footer;
-    background-color: green;
-  }
-
-  .contact {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .presentacion {
-    border-bottom: 1px solid white;
-    padding-bottom: 3rem;
-  }
-
-  .habilidades {
-    padding-top: 10px;
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
-  }
-
-  .proyectos {
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .portafolio {
-    width: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas: "header" "main" "footer";
-  }
-
-  .main {
-    grid-area: main;
-    display: grid;
-    height: 100%;
-    width: 100%;
-    grid-template-rows: auto;
-    background-image: linear-gradient(
-      to bottom,
-      #020024,
-      #050c2e,
-      #031539,
-      #021b44,
-      #00224f
-    );
-  }
-  .footer {
-    grid-area: footer;
-    background-color: green;
-  }
-
-  .contact {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .presentacion {
-    border-bottom: 1px solid white;
-    padding-bottom: 3rem;
-  }
-
-  .habilidades {
-    padding-top: 10px;
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
-  }
-
-  .proyectos {
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-  .portafolio {
-    width: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas: "header" "main" "footer";
-  }
-
-  .main {
-    grid-area: main;
-    display: grid;
-    height: 100%;
-    width: 100%;
-    grid-template-rows: auto;
-    background-image: linear-gradient(
-      to bottom,
-      #020024,
-      #050c2e,
-      #031539,
-      #021b44,
-      #00224f
-    );
-  }
-  .footer {
-    grid-area: footer;
-    background-color: green;
-  }
-
-  .contact {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .presentacion {
-    border-bottom: 1px solid white;
-    padding-bottom: 3rem;
-  }
-
-  .habilidades {
-    padding-top: 10px;
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
-  }
-
-  .proyectos {
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
   }
 }

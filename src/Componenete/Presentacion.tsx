@@ -7,7 +7,7 @@ import {
   faGithub,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons"; // Importa el icono de correo
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function Presentacion() {
   const texts = [
@@ -21,7 +21,7 @@ function Presentacion() {
           <div className="perfilImg">
             <img src="./perfil.png" alt="Perfil" className="imagen-perfil" />
             <div className="disponible">
-              <p>Disponible para trabajar </p>
+              <p>Disponible para trabajar</p>
               <img src="./unlock.svg" alt="unlock" className="unlock-icon" />
             </div>
           </div>
@@ -32,40 +32,31 @@ function Presentacion() {
           <div>
             <TextCycle texts={texts} interval={100} pause={1000} />
           </div>
-
           <div className="cv">
-            <h3 style={{ marginRight: "20px" }}>Descargar CV</h3>
+            <h3>Descargar CV</h3>
             <DownloadButton />
           </div>
           <div className="redes">
-            <div>
-              <a
-                href="https://github.com/Ian12-sgv"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faGithub} size="2x" color="white" />
-              </a>
-            </div>
-            <div>
-              <a
-                href="https://www.linkedin.com/in/ian-bonillo"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faLinkedin} size="2x" color="white" />
-              </a>
-            </div>
-            <div>
-              <a href="mailto:ianbonillo@gmail.com">
-                <FontAwesomeIcon icon={faEnvelope} size="2x" color="white" />
-              </a>
-            </div>
-            <div>
-              <a href="https://wa.me/584126665102">
-                <FontAwesomeIcon icon={faWhatsapp} size="2x" color="white" />
-              </a>
-            </div>
+            <a
+              href="https://github.com/Ian12-sgv"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faGithub} size="2x" color="white" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ian-bonillo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faLinkedin} size="2x" color="white" />
+            </a>
+            <a href="mailto:ianbonillo@gmail.com">
+              <FontAwesomeIcon icon={faEnvelope} size="2x" color="white" />
+            </a>
+            <a href="https://wa.me/584126665102">
+              <FontAwesomeIcon icon={faWhatsapp} size="2x" color="white" />
+            </a>
           </div>
         </div>
       </div>
