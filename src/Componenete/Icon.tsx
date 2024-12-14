@@ -1,17 +1,16 @@
 import React from "react";
+import "../Style/Habilidades.css";
 
 interface IconProps {
   src?: string;
   p?: string;
 }
 
-const Icon: React.FC<IconProps> = ({ src }) => {
+const Icon: React.FC<IconProps> = ({ src, p }) => {
   return (
-    <div style={{ textAlign: "center" }}>
-      <img
-        src={src}
-        style={{ width: "50px", height: "50px", paddingBottom: "10px" }}
-      />
+    <div>
+      <img src={src} className="iconos" />
+      <p className="parrafo">{p}</p>
     </div>
   );
 };

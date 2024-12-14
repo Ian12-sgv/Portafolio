@@ -510,6 +510,15 @@
     border-bottom: 1px solid var(--border-button-color);
   }
 
+  .tecnoligias {
+    background-color: "#1572B6";
+    border-radius: "10px";
+    display: "inline-block";
+    width: "60px";
+    height: "60px";
+    padding-top: "10px";
+  }
+
   .aprendiendo-container {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -571,5 +580,18 @@
     width: 50%;
     margin-left: 25%;
     margin-top: 1rem;
+  }
+
+  .iconos {
+    width: 50px;
+    height: 50px;
+  }
+  .parrafo {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 60%;
+    font-style: normal;
+    color: white;
+    text-align: center;
   }
 }
