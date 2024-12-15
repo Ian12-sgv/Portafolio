@@ -14,7 +14,6 @@
   height: 100%;
   color: var(--text-color);
   margin-top: 3rem;
-
   border-bottom: 1px solid var(--border-button-color);
 }
 
@@ -26,7 +25,7 @@
   align-items: center;
   justify-content: center;
   gap: 20%;
-  margin-bottom: 8.6%;
+  margin-bottom: 1%;
 }
 
 .mi-presentacion {
@@ -378,7 +377,7 @@
   }
 
   .text-container {
-    width: 410px;
+    width: 250px;
     height: 100px;
     white-space: normal;
     word-wrap: break-word;
@@ -410,14 +409,14 @@
   .nombre {
     font-family: "Barlow", serif;
     font-weight: 100;
-    font-size: 50px;
+    font-size: 300%;
     font-style: normal;
   }
 
   .profesion {
     font-family: "Barlow", serif;
     font-weight: 100;
-    font-size: 75px;
+    font-size: 300%;
     font-style: normal;
   }
 
