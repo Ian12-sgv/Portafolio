@@ -5,11 +5,11 @@ import html5 from "../assets/html.png";
 import js from "../assets/javascript.png";
 import typreScript from "../assets/typescript.png";
 import bootstrap from "../assets/svg/bootstrap.svg";
-import material from "../assets/svg/material-ui.png";
+import material from "../assets/svg/material-ui.svg";
 import react from "../assets/svg/react.svg";
 import php from "../assets/svg/phpfont.svg";
 import laravel from "../assets/svg/laravel.png";
-import mysql from "../assets/svg/mysql.png";
+import mysql from "../assets/svg/mysql.svg";
 import node from "../assets/svg/node.svg";
 import git from "../assets/svg/git.svg";
 import vite from "../assets/svg/Vite.svg";
@@ -37,7 +37,6 @@ function Habilidades() {
               <Icon src={bootstrap} p="Bootstrap" />
             </div>
             <div>
-              {" "}
               <Icon src={material} p="Material UI" />
             </div>
             <div>
