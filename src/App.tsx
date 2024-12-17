@@ -2,7 +2,6 @@ import "./App.css";
 import Presentacion from "./Componenete/Presentacion";
 import Habilidades from "./Componenete/Habilidades";
 import Formacion from "./Componenete/Formacion";
-import Servicio from "./Componenete/Servicio";
 import Proyectos from "./Componenete/Proyectos";
 import Navbar from "./Componenete/Navbar";
 import Footer from "./Componenete/Footer";
@@ -23,9 +22,6 @@ function App() {
         </section>
         <section id="formacion" className="formacion">
           <Formacion />
-        </section>
-        <section id="servicio" className="servicio">
-          <Servicio />
         </section>
       </main>
       <footer className="footer">

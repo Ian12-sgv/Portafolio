@@ -6,7 +6,6 @@ import {
   faLayerGroup,
   faBookOpen,
   faLaptopCode,
-  faBriefcase,
 } from "@fortawesome/free-solid-svg-icons";
 
 import "../Style/Navbar.css";
@@ -85,15 +84,6 @@ const Navbar: React.FC = () => {
             onClick={handleLinkClick}
           >
             <Enlace icon={faBookOpen} text="Formacion" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="#servicio"
-            className={activeSection === "servicio" ? "active" : ""}
-            onClick={handleLinkClick}
-          >
-            <Enlace icon={faBriefcase} text="Servicios" />
           </a>
         </li>
       </ul>

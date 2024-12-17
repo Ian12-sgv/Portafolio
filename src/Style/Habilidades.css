@@ -80,7 +80,7 @@
   align-items: center;
   gap: 100px;
   margin-top: 1rem;
-  margin-left: 5rem;
+  margin-left: 1%;
 }
 .material-ui {
   max-width: 100%;
@@ -447,7 +447,7 @@
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
-    margin-left: 2%;
+    margin-left: 15%;
   }
   .material-ui {
     max-width: 100%;

@@ -11,10 +11,9 @@
 
 .presentacion-container {
   width: 100%;
-  height: 100%;
+  height: 99%;
   color: var(--text-color);
   margin-top: 3rem;
-  border-bottom: 1px solid var(--border-button-color);
 }
 
 .presentacion-content {
