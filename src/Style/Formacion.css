@@ -38,6 +38,10 @@ p {
   list-style-type: none;
   padding-left: 0;
   color: white;
+  font-family: "Barlow", serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 110%;
 }
 
 .cursos-lista li {
@@ -61,6 +65,17 @@ h3 {
 
 .universidad {
   width: 80%;
+  font-family: "Barlow", serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 110%;
+}
+
+.experiencia-info {
+  font-family: "Barlow", serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 110%;
 }
 
 @media (max-width: 1201px) {
@@ -117,6 +132,17 @@ h3 {
 
   .universidad {
     width: 80%;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 110%;
+  }
+
+  .experiencia-info {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 110%;
   }
 }
 
@@ -174,6 +200,17 @@ h3 {
 
   .universidad {
     width: 80%;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 110%;
+  }
+
+  .experiencia-info {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 110%;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -229,6 +266,17 @@ h3 {
 
   .universidad {
     width: 80%;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 110%;
+  }
+
+  .experiencia-info {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 110%;
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
@@ -284,6 +332,17 @@ h3 {
 
   .universidad {
     width: 80%;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 110%;
+  }
+
+  .experiencia-info {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 110%;
   }
 }
 
@@ -341,5 +400,16 @@ h3 {
 
   .universidad {
     width: 80%;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 110%;
+  }
+
+  .experiencia-info {
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 110%;
   }
 }
