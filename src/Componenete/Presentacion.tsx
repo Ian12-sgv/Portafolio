@@ -8,12 +8,12 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 function Presentacion() {
-  const texts = [
-    "Soy un junior con experiencia en front-end.",
-    "Estoy iniciado en back-end.",
-  ];
+  const { t } = useTranslation();
+  const texts = [t("text1"), t("text2")];
+
   return (
     <div className="presentacion-container">
       <div className="presentacion-content">
@@ -21,19 +21,19 @@ function Presentacion() {
           <div className="perfilImg">
             <img src="./perfil.png" alt="Perfil" className="imagen-perfil" />
             <div className="disponible">
-              <p>Disponible para trabajar</p>
+              <p>{t("available")}</p>
               <img src="./unlock.svg" alt="unlock" className="unlock-icon" />
             </div>
           </div>
         </div>
         <div className="mi-presentacion">
-          <div className="profesion">Ingeniero de Sistemas</div>
-          <div className="nombre">Hola, Soy Ian Franco Bonillo</div>
+          <div className="profesion">{t("profession")}</div>
+          <div className="nombre">{t("welcome")}</div>
           <div>
             <TextCycle texts={texts} interval={100} pause={1000} />
           </div>
           <div className="cv">
-            <h3>Descargar CV</h3>
+            <h3>{t("download_cv")}</h3>
             <DownloadButton />
           </div>
           <div className="redes">
