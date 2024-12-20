@@ -206,7 +206,7 @@ html {
     cursor: pointer;
     z-index: 1000;
     border-radius: 80px;
-    background-color: #01081f;
+    background-color: var(--primary-bg-color);
   }
   .nav-links {
     display: none;
@@ -224,7 +224,7 @@ html {
     font-size: 1.5rem;
     font-style: normal;
     border: 0px solid #1c6ea4;
-    background-color: #01081f;
+    background-color: var(--primary-bg-color);
     border-radius: 0px 40px 40px 0px;
     -webkit-box-shadow: 1px 2px 16px -5px #000000;
     box-shadow: 1px 2px 16px -5px #000000;
@@ -277,7 +277,7 @@ html {
     cursor: pointer;
     z-index: 1000;
     border-radius: 80px;
-    background-color: #01081f;
+    background-color: var(--primary-bg-color);
   }
   .nav-links {
     display: none;
@@ -295,7 +295,7 @@ html {
     font-size: 1.5rem;
     font-style: normal;
     border: 0px solid #1c6ea4;
-    background-color: #01081f;
+    background-color: var(--primary-bg-color);
     border-radius: 0px 40px 40px 0px;
     -webkit-box-shadow: 1px 2px 16px -5px #000000;
     box-shadow: 1px 2px 16px -5px #000000;
