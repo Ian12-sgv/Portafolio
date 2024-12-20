@@ -142,10 +142,10 @@ html {
     gap: 2rem;
     flex-direction: column;
     width: 25%;
-    height: 80%;
+    height: 100%;
     background-color: var(--primary-bg-color);
     position: fixed;
-    top: 8%;
+    top: 0%;
     left: 0;
     z-index: 1000;
     align-items: start;
@@ -154,9 +154,6 @@ html {
     font-size: 1.5rem;
     font-style: normal;
     border: 0px solid #1c6ea4;
-    border-radius: 0px 40px 40px 0px;
-    -webkit-box-shadow: 1px 2px 16px -5px #1b1b1b;
-    box-shadow: 1px 2px 16px -5px #000000;
   }
   .nav-links.open {
     display: flex;
@@ -213,9 +210,9 @@ html {
     gap: 1rem;
     flex-direction: column;
     width: 30%;
-    height: 80%;
+    height: 100%;
     position: fixed;
-    top: 4%;
+    top: 0%;
     left: 0;
     z-index: 1000;
     align-items: start;
@@ -225,9 +222,6 @@ html {
     font-style: normal;
     border: 0px solid #1c6ea4;
     background-color: var(--primary-bg-color);
-    border-radius: 0px 40px 40px 0px;
-    -webkit-box-shadow: 1px 2px 16px -5px #000000;
-    box-shadow: 1px 2px 16px -5px #000000;
   }
   .nav-links.open {
     display: flex;
@@ -284,9 +278,9 @@ html {
     gap: 1rem;
     flex-direction: column;
     width: 50%;
-    height: 90%;
+    height: 100%;
     position: fixed;
-    top: 4%;
+    top: 0%;
     left: 0;
     z-index: 1000;
     align-items: start;
@@ -296,9 +290,6 @@ html {
     font-style: normal;
     border: 0px solid #1c6ea4;
     background-color: var(--primary-bg-color);
-    border-radius: 0px 40px 40px 0px;
-    -webkit-box-shadow: 1px 2px 16px -5px #000000;
-    box-shadow: 1px 2px 16px -5px #000000;
   }
   .nav-links.open {
     display: flex;
