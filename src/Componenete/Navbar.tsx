@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 import React, { useState, useEffect } from "react";
 import Enlace from "./Enlace";
 import {
@@ -10,7 +9,12 @@ import {
 
 import "../Style/Navbar.css";
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  isDarkMode: boolean;
+  toggleTheme: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
   const [activeSection, setActiveSection] = useState<string>("");
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -44,11 +48,12 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="navbar">
-      <div className="floating-bubble" onClick={toggleMenu}>
-        &#9776;
+    <nav className={`navbar ${isDarkMode ? "dark-mode" : ""}`}>
+      <div className="button-container">
+        <div className="floating-bubble" onClick={toggleMenu}>
+          &#9776;
+        </div>
       </div>
-
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
         <li>
           <a
@@ -86,6 +91,9 @@ const Navbar: React.FC = () => {
             <Enlace icon={faBookOpen} text="Formacion" />
           </a>
         </li>
+        <button onClick={toggleTheme} className="theme-toggle-button">
+          {isDarkMode ? "Claro" : "Oscuro"}
+        </button>
       </ul>
     </nav>
   );
