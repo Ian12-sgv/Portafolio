@@ -386,10 +386,10 @@ h3 {
   .formacion-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    width: 60%;
+    width: 90%;
     gap: 0%;
     margin-top: 2%;
-    margin-left: 25%;
+
     margin-bottom: 5%;
   }
 
