@@ -1,3 +1,14 @@
+:root {
+  --primary-bg-color: #01081f;
+  --border-color: rgb(126, 126, 126);
+  --contact-padding: 10px;
+  --footer-bg-color: #01081f;
+  --primary-bg-color-light: #ffffff;
+  --border-color-light: rgb(200, 200, 200);
+  --footer-bg-color-light: #f1f1f1;
+  --text-color: #ffffff;
+  --text-color-light: #000000;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -9,14 +20,16 @@ html {
   background-color: var(--primary-bg-color);
   transition: background-color 0.3s ease;
   border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
 }
 
 .navbar.dark-mode {
   background-color: var(--primary-bg-color);
+  color: var(--text-color);
 }
 
 .navbar a {
-  color: white;
+  color: var(--text-color);
   list-style-type: none;
   text-decoration: none;
   padding: 0;
@@ -51,12 +64,18 @@ html {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: #01081f;
+    background-color: var(--primary-bg-color);
     transition: background-color 0.3s ease;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+  }
+  .navbar.dark-mode {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
   }
 
   .navbar a {
-    color: white;
+    color: var(--text-color);
     list-style-type: none;
     text-decoration: none;
     padding: 0;
@@ -92,16 +111,23 @@ html {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: #01081f;
+    background-color: var(--primary-bg-color);
     transition: background-color 0.3s ease;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+  }
+  .navbar.dark-mode {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
   }
 
   .navbar a {
-    color: white;
+    color: var(--text-color);
     list-style-type: none;
     text-decoration: none;
+    padding: 0;
+    margin: 0;
   }
-
   .nav-links {
     display: flex;
     justify-content: space-around;
@@ -130,12 +156,18 @@ html {
     padding-left: 10px;
     height: 60px;
     border-radius: 50%;
-    color: white;
     font-size: 40px;
     cursor: pointer;
     z-index: 1000;
     border-radius: 80px;
     background-color: var(--primary-bg-color);
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+  }
+  .navbar.dark-mode {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
   }
   .nav-links {
     display: none;
@@ -153,7 +185,8 @@ html {
     font-weight: 100;
     font-size: 1.5rem;
     font-style: normal;
-    border: 0px solid #1c6ea4;
+    border: 1px solid var(--border-color);
+    border-radius: 1% 4% 4% 1%;
   }
   .nav-links.open {
     display: flex;
@@ -165,15 +198,13 @@ html {
   }
 
   .navbar a {
-    color: white;
+    color: var(--text-color);
     list-style-type: none;
     text-decoration: none;
     padding: 0;
     margin: 0;
   }
-  .navbar a.active {
-    color: white;
-  }
+
   .close-button button {
     background-color: white;
     color: red;
@@ -198,12 +229,18 @@ html {
     padding-left: 10px;
     height: 60px;
     border-radius: 50%;
-    color: white;
     font-size: 40px;
     cursor: pointer;
     z-index: 1000;
     border-radius: 80px;
     background-color: var(--primary-bg-color);
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+  }
+  .navbar.dark-mode {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
   }
   .nav-links {
     display: none;
@@ -222,6 +259,8 @@ html {
     font-style: normal;
     border: 0px solid #1c6ea4;
     background-color: var(--primary-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 1% 4% 4% 1%;
   }
   .nav-links.open {
     display: flex;
@@ -233,15 +272,13 @@ html {
   }
 
   .navbar a {
-    color: white;
+    color: var(--text-color);
     list-style-type: none;
     text-decoration: none;
     padding: 0;
     margin: 0;
   }
-  .navbar a.active {
-    color: white;
-  }
+
   .close-button button {
     background-color: white;
     color: red;
@@ -266,12 +303,18 @@ html {
     padding-left: 5%;
     height: 7%;
     border-radius: 50%;
-    color: white;
     font-size: 40px;
     cursor: pointer;
     z-index: 1000;
     border-radius: 80px;
     background-color: var(--primary-bg-color);
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+  }
+  .navbar.dark-mode {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
   }
   .nav-links {
     display: none;
@@ -290,6 +333,8 @@ html {
     font-style: normal;
     border: 0px solid #1c6ea4;
     background-color: var(--primary-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 1% 4% 4% 1%;
   }
   .nav-links.open {
     display: flex;
@@ -301,15 +346,13 @@ html {
   }
 
   .navbar a {
-    color: white;
+    color: var(--text-color);
     list-style-type: none;
     text-decoration: none;
     padding: 0;
     margin: 0;
   }
-  .navbar a.active {
-    color: white;
-  }
+
   .close-button button {
     background-color: white;
     color: red;

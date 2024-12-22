@@ -1,6 +1,5 @@
-import React from "react";
+import React, { FC } from "react";
 import "../Style/Proyectos.css";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLaptop } from "@fortawesome/free-solid-svg-icons";
 
@@ -8,7 +7,7 @@ interface ProyectoProps {
   src: string;
   titulo: string;
   descripcion: string;
-  git: string;
+
   verProyecto: string;
 }
 
@@ -17,7 +16,6 @@ const Proyecto: React.FC<ProyectoProps> = ({
   titulo,
   descripcion,
 
-  git,
   verProyecto,
 }) => {
   return (
@@ -31,14 +29,7 @@ const Proyecto: React.FC<ProyectoProps> = ({
 
         <div className="proyecto-botones">
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <p>GitHub</p>
-            <a href={git} target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faGithub} size="1x" color="white" />
-            </a>
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <p>Ver Proyecto</p>
+            <p className="ver-proyecto">Ver Proyecto</p>
             <a href={verProyecto} target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faLaptop} size="1x" color="green" />
             </a>

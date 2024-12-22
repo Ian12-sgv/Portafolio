@@ -21,7 +21,7 @@ function Presentacion() {
           <div className="perfilImg">
             <img src="./perfil.png" alt="Perfil" className="imagen-perfil" />
             <div className="disponible">
-              <p>{t("available")}</p>
+              <p className="disponible-text">{t("available")}</p>
               <img src="./unlock.svg" alt="unlock" className="unlock-icon" />
             </div>
           </div>
@@ -29,7 +29,7 @@ function Presentacion() {
         <div className="mi-presentacion">
           <div className="profesion">{t("profession")}</div>
           <div className="nombre">{t("welcome")}</div>
-          <div>
+          <div className="descripcion">
             <TextCycle texts={texts} interval={100} pause={1000} />
           </div>
           <div className="cv">
@@ -42,20 +42,36 @@ function Presentacion() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FontAwesomeIcon icon={faGithub} size="2x" color="white" />
+              <FontAwesomeIcon
+                icon={faGithub}
+                size="2x"
+                className="icon-font"
+              />
             </a>
             <a
               href="https://www.linkedin.com/in/ian-bonillo"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FontAwesomeIcon icon={faLinkedin} size="2x" color="white" />
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                size="2x"
+                className="icon-font"
+              />
             </a>
             <a href="mailto:ianbonillo@gmail.com">
-              <FontAwesomeIcon icon={faEnvelope} size="2x" color="white" />
+              <FontAwesomeIcon
+                icon={faEnvelope}
+                size="2x"
+                className="icon-font"
+              />
             </a>
             <a href="https://wa.me/584126665102">
-              <FontAwesomeIcon icon={faWhatsapp} size="2x" color="white" />
+              <FontAwesomeIcon
+                icon={faWhatsapp}
+                size="2x"
+                className="icon-font"
+              />
             </a>
           </div>
         </div>

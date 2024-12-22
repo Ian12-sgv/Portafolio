@@ -6,7 +6,9 @@ import {
   faBookOpen,
   faLaptopCode,
 } from "@fortawesome/free-solid-svg-icons";
-
+import { faSun } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import "../Style/Navbar.css";
 
 interface NavbarProps {
@@ -91,9 +93,13 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
             <Enlace icon={faBookOpen} text="Formacion" />
           </a>
         </li>
-        <button onClick={toggleTheme} className="theme-toggle-button">
-          {isDarkMode ? "Claro" : "Oscuro"}
-        </button>
+        <a onClick={toggleTheme} className="theme-toggle-button">
+          {isDarkMode ? (
+            <FontAwesomeIcon icon={faSun} />
+          ) : (
+            <FontAwesomeIcon icon={faMoon} />
+          )}
+        </a>
       </ul>
     </nav>
   );

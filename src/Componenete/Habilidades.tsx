@@ -45,7 +45,6 @@ function Habilidades() {
             </div>
           </div>
         </div>
-
         <div className="aprendiendo-back">
           <h1 className="titulo">{t("backend")}</h1>
           <div className="back">

@@ -7,8 +7,19 @@
   --border-button-color: rgb(126, 126, 126);
   --available-bg-color: #128334;
   --available-text-color: white;
+  --text-color-light: #4774b8;
+  --icon-color: white;
+  --icon-color-light: #4774b8;
 }
-
+body {
+  transition: background-color 0.3s, color 0.3s;
+  color: var(--text-color);
+}
+body.dark-mode {
+  --primary-color: #e1e8fe;
+  --text-color: #4774b8;
+  --icon-color: #4774b8;
+}
 .presentacion-container {
   width: 100%;
   height: 99%;
@@ -37,7 +48,13 @@
 }
 
 .download-button {
-  width: 25px;
+  width: 30px;
+  height: 30px;
+  margin-left: 50%;
+  color: var(--icon-color);
+}
+.descripcion {
+  height: 15%;
 }
 
 .cv {
@@ -46,7 +63,7 @@
 }
 
 .text-container {
-  width: 580px;
+  width: 100%;
   height: 110px;
   white-space: normal;
   word-wrap: break-word;
@@ -66,7 +83,7 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  border: 1px solid var(--border-color);
+
   background-color: var(--primary-bg-color);
 }
 
@@ -95,11 +112,11 @@
   gap: 20px;
   align-items: center;
   text-decoration: none;
+  color: var(--text-color);
 }
 
 .disponible {
   background-color: var(--available-bg-color);
-  color: var(--available-text-color);
   font-family: "Barlow", serif;
   font-weight: 100;
   font-size: 15px;
@@ -114,17 +131,24 @@
   display: flex;
 }
 
+.disponible-text {
+  color: var(--available-text-color);
+}
+
 .unlock-icon {
   width: 20px;
   height: 20px;
   margin-left: 15px;
 }
 
+.icon-font {
+  color: var(--icon-color);
+}
 @media (max-width: 1201px) {
   .presentacion-container {
     width: 100%;
     height: 100%;
-    color: white;
+    color: var(--text-color);
   }
 
   .presentacion-content {
@@ -147,6 +171,10 @@
   }
   .download-button {
     width: 25px;
+    color: var(--icon-color);
+  }
+  .descripcion {
+    height: 15%;
   }
 
   .cv {
@@ -164,7 +192,7 @@
     font-weight: 100;
     font-size: 40px;
     font-style: normal;
-    color: #20dad8;
+    color: var(--accent-color);
   }
 
   .imagen {
@@ -175,8 +203,8 @@
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    border: 1px solid #020024;
-    background-color: #01081f;
+
+    background-color: var(--primary-bg-color);
   }
 
   .imagen-perfil {
@@ -203,10 +231,11 @@
     gap: 20px;
     align-items: center;
     text-decoration: none;
+    color: var(--text-color);
   }
 
   .disponible {
-    background-color: #128334;
+    background-color: var(--available-bg-color);
     color: rgb(255, 255, 255);
     font-family: "Barlow", serif;
     font-weight: 100;
@@ -227,13 +256,19 @@
     height: 20px;
     margin-left: 15px;
   }
+  .disponible-text {
+    color: var(--available-text-color);
+  }
+  .icon-font {
+    color: var(--icon-color);
+  }
 }
 
 @media (min-width: 1025px) and (max-width: 1200px) {
   .presentacion-container {
     width: 100%;
     height: 100%;
-    color: white;
+    color: var(--text-color);
   }
 
   .presentacion-content {
@@ -256,6 +291,10 @@
   }
   .download-button {
     width: 25px;
+    color: var(--icon-color);
+  }
+  .descripcion {
+    height: 15%;
   }
 
   .cv {
@@ -273,7 +312,7 @@
     font-weight: 100;
     font-size: 40px;
     font-style: normal;
-    color: #20dad8;
+    color: var(--accent-color);
   }
 
   .imagen {
@@ -284,8 +323,7 @@
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    border: 1px solid #020024;
-    background-color: #01081f;
+    background-color: var(--primary-bg-color);
   }
 
   .imagen-perfil {
@@ -312,10 +350,11 @@
     gap: 20px;
     align-items: center;
     text-decoration: none;
+    color: var(--text-color);
   }
 
   .disponible {
-    background-color: #128334;
+    background-color: var(--available-bg-color);
     color: rgb(255, 255, 255);
     font-family: "Barlow", serif;
     font-weight: 100;
@@ -336,13 +375,19 @@
     height: 20px;
     margin-left: 15px;
   }
+  .disponible-text {
+    color: var(--available-text-color);
+  }
+  .icon-font {
+    color: var(--icon-color);
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .presentacion-container {
     width: 100%;
     height: 100%;
-    color: white;
+    color: var(--text-color);
   }
 
   .presentacion-content {
@@ -365,6 +410,10 @@
   }
   .download-button {
     width: 25px;
+    color: var(--text-color);
+  }
+  .descripcion {
+    height: 15%;
   }
 
   .cv {
@@ -386,7 +435,7 @@
     font-weight: 100;
     font-size: 30px;
     font-style: normal;
-    color: #20dad8;
+    color: var(--accent-color);
   }
 
   .imagen {
@@ -397,8 +446,7 @@
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    border: 1px solid #020024;
-    background-color: #01081f;
+    background-color: var(--primary-bg-color);
   }
 
   .imagen-perfil {
@@ -425,10 +473,11 @@
     gap: 20px;
     align-items: center;
     text-decoration: none;
+    color: var(--text-color);
   }
 
   .disponible {
-    background-color: #128334;
+    background-color: var(--available-bg-color);
     color: rgb(255, 255, 255);
     font-family: "Barlow", serif;
     font-weight: 100;
@@ -449,13 +498,19 @@
     height: 20px;
     margin-left: 15px;
   }
+  .disponible-text {
+    color: var(--available-text-color);
+  }
+  .icon-font {
+    color: var(--icon-color);
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
   .presentacion-container {
     width: 100%;
     height: 100%;
-    color: white;
+    color: var(--text-color);
     margin-bottom: 10%;
   }
 
@@ -480,6 +535,10 @@
   }
   .download-button {
     width: 25px;
+    color: var(--text-color);
+  }
+  .descripcion {
+    height: 15%;
   }
 
   .cv {
@@ -498,7 +557,7 @@
     font-weight: 100;
     font-size: 180%;
     font-style: normal;
-    color: #20dad8;
+    color: var(--accent-color);
     text-align: center;
     margin-left: 0%;
   }
@@ -511,8 +570,7 @@
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    border: 1px solid #020024;
-    background-color: #01081f;
+    background-color: var(--primary-bg-color);
   }
 
   .imagen {
@@ -540,10 +598,11 @@
     align-items: center;
     text-decoration: none;
     justify-content: center;
+    color: var(--text-color);
   }
 
   .disponible {
-    background-color: #128334;
+    background-color: var(--available-bg-color);
     color: rgb(255, 255, 255);
     font-family: "Barlow", serif;
     font-weight: 100;
@@ -564,13 +623,19 @@
     height: 20px;
     margin-left: 15px;
   }
+  .disponible-text {
+    color: var(--available-text-color);
+  }
+  .icon-font {
+    color: var(--icon-color);
+  }
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
   .presentacion-container {
     width: 100%;
     height: 100%;
-    color: white;
+    color: var(--text-color);
     margin-bottom: 10%;
   }
 
@@ -594,6 +659,11 @@
   }
   .download-button {
     width: 25px;
+    color: var(--text-color);
+  }
+
+  .descripcion {
+    height: 15%;
   }
 
   .cv {
@@ -614,7 +684,7 @@
     font-weight: 100;
     font-size: 130%;
     font-style: normal;
-    color: #20dad8;
+    color: var(--accent-color);
     text-align: center;
     overflow: hidden;
     white-space: pre-wrap;
@@ -628,8 +698,7 @@
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    border: 1px solid #020024;
-    background-color: #01081f;
+    background-color: var(--primary-bg-color);
   }
 
   .imagen {
@@ -657,10 +726,11 @@
     align-items: center;
     text-decoration: none;
     justify-content: center;
+    color: var(--text-color);
   }
 
   .disponible {
-    background-color: #128334;
+    background-color: var(--available-bg-color);
     color: rgb(255, 255, 255);
     font-family: "Barlow", serif;
     font-weight: 100;
@@ -680,5 +750,11 @@
     width: 20px;
     height: 20px;
     margin-left: 15px;
+  }
+  .disponible-text {
+    color: var(--available-text-color);
+  }
+  .icon-font {
+    color: var(--icon-color);
   }
 }

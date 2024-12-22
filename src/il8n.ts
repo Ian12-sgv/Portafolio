@@ -57,7 +57,9 @@ i18n
           "educacion_it": "EDUCACIÓN IT - 2024",
           "nerdcom": "Nerdcom - 6 months",
           "iclam": "ICLAM - 6 months",
-          "home": "Home"
+          "home": "Home",
+          "formation": "Formation"
+
         }
       },
       es: {
@@ -103,7 +105,8 @@ i18n
           "educacion_it": "EDUCAIÓN IT - 2024",
           "nerdcom": "Nerdcom - 6 meses",
           "iclam": "ICLAM - 6 meses",
-          "home": "Inicio"
+          "home": "Inicio",
+          "formation": "Formación"
         }
       }
     }

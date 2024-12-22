@@ -1,22 +1,28 @@
 :root {
   --primary-bg-color: #01081f;
-  --border-color: rgb(126, 126, 126);
+  --border-color: #0c011f;
   --contact-padding: 10px;
   --footer-bg-color: #01081f;
-  --primary-bg-color-light: #ffffff;
-  --border-color-light: rgb(200, 200, 200);
-  --footer-bg-color-light: #f1f1f1;
+  --primary-bg-color-light: #e1e8fe;
+  --border-color-light: #47a2b8;
+  --footer-bg-color-light: #e1e8fe;
+  --text-color: #ffffff;
+  --text-color-light: #4774b8;
 }
 
 body {
   transition: background-color 0.3s, color 0.3s;
+  color: var(--text-color);
+  background-color: var(--primary-bg-color);
 }
 
 body.dark-mode {
-  --primary-bg-color: #121212;
-  --border-color: rgb(126, 126, 126);
-  --footer-bg-color: #121212;
-  color: #ffffff;
+  --primary-bg-color: #e1e8fe;
+  --border-color: #807f83;
+  --footer-bg-color: #e1e8fe;
+  --text-color: #4774b8;
+  background-color: var(--primary-bg-color);
+  color: var(--text-color);
 }
 
 .portafolio {
@@ -25,7 +31,7 @@ body.dark-mode {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "main" "footer";
-  gap: 5%;
+  gap: 0%;
   background-color: var(--primary-bg-color);
 }
 
@@ -53,6 +59,10 @@ body.dark-mode {
   align-items: center;
   padding: var(--contact-padding);
   border-top: 1px solid var(--border-color);
+}
+
+.icon-footer {
+  color: var(--icon-color);
 }
 
 .presentacion,
@@ -96,22 +106,22 @@ body.dark-mode {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-top: 1px solid rgb(126, 126, 126);
+    border-top: 1px solid var(--border-color);
   }
 
   .presentacion {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--border-color);
     margin-bottom: 20%;
     width: 100%;
     height: 105%;
   }
+
   .habilidades {
-    border-bottom: 1px solid var(--border-color);
     margin-bottom: 0%;
     width: 100%;
   }
+
   .proyectos {
-    border-bottom: 1px solid var(--border-color);
     margin-bottom: 0%;
     width: 100%;
     height: 100%;
@@ -121,5 +131,9 @@ body.dark-mode {
     border-bottom: 1px solid var(--border-color);
     width: 100%;
     height: 100%;
+  }
+
+  .icon-footer {
+    color: var(--icon-color);
   }
 }
