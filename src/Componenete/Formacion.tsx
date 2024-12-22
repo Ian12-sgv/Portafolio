@@ -6,7 +6,7 @@ function Formacion() {
 
   return (
     <div className="formacion-content">
-      <h1>{t("Formation")}</h1>
+      <h1>{t("formation")}</h1>
       <div className="formacion-container">
         <div className="formacion-info">
           <h1>{t("education")}</h1>
