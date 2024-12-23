@@ -5,10 +5,12 @@ import {
   faLayerGroup,
   faBookOpen,
   faLaptopCode,
+  faSun,
+  faMoon,
+  faBars,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
-import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import "../Style/Navbar.css";
 
 interface NavbarProps {
@@ -53,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
     <nav className={`navbar ${isDarkMode ? "dark-mode" : ""}`}>
       <div className="button-container">
         <div className="floating-bubble" onClick={toggleMenu}>
-          &#9776;
+          <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
         </div>
       </div>
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
@@ -93,13 +95,25 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
             <Enlace icon={faBookOpen} text="Formacion" />
           </a>
         </li>
-        <a onClick={toggleTheme} className="theme-toggle-button">
-          {isDarkMode ? (
-            <FontAwesomeIcon icon={faSun} />
-          ) : (
-            <FontAwesomeIcon icon={faMoon} />
-          )}
-        </a>
+        <div className="theme-toggle-container">
+          <div>
+            {" "}
+            <a onClick={toggleTheme} className="theme-toggle-button">
+              {isDarkMode ? (
+                <FontAwesomeIcon icon={faSun} />
+              ) : (
+                <FontAwesomeIcon icon={faMoon} />
+              )}
+            </a>
+          </div>
+          <div>
+            {isOpen && (
+              <button onClick={toggleMenu} className="close-menu-button">
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
+            )}
+          </div>
+        </div>
       </ul>
     </nav>
   );

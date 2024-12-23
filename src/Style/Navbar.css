@@ -215,6 +215,12 @@ html {
     font-size: 18px;
     position: absolute;
   }
+  .theme-toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -289,6 +295,12 @@ html {
     font-size: 18px;
     position: absolute;
   }
+  .theme-toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
@@ -362,5 +374,12 @@ html {
     cursor: pointer;
     font-size: 18px;
     position: absolute;
+  }
+
+  .theme-toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 }

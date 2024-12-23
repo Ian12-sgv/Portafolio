@@ -16,7 +16,7 @@ i18n
     resources: {
       en: {
         translation: {
-          "welcome": "Hello, I am Ian Franco Bonillo",
+          "welcome": "Greetings Ian Franco Bonillo",
           "profession": "Systems Engineer",
           "available": "Available for work",
           "download_cv": "Download CV",
@@ -39,13 +39,13 @@ i18n
           "node": "Node",
           "git": "Git",
           "vite": "Vite",
-          "projects": "Projects",
+          "projects": "Applications",
           "food_truck": "Food Truck",
-          "food_truck_desc": "It is a fast food ordering system where customers can place orders and pay with credit or debit cards. It was my first project in React.",
+          "food_truck_desc": "Design and development of a website based on React, where the customer selects their preferred option and makes payments via credit or debit cards.",
           "v8": "V8",
-          "v8_desc": "It is a fast food ordering system where customers can place orders and pay with credit or debit cards.",
-          "portfolio": "My Portfolio",
-          "portfolio_desc": "This is my portfolio where you can see my projects and personal information.",
+          "v8_desc": "Fast food website built with React and TypeScript. This portal facilitates the customer's food choice and payment method.",
+          "portfolio": "Portfolio",
+          "portfolio_desc": "A space that provides academic information, a collection of completed works, as well as skills and tools developed as a Systems Engineer and programmer.",
           "education": "Education",
           "university": "University",
           "courses": "Courses",
@@ -59,12 +59,11 @@ i18n
           "iclam": "ICLAM - 6 months",
           "home": "Home",
           "formation": "Formation"
-
         }
       },
       es: {
         translation: {
-          "welcome": "Hola, Soy Ian Franco Bonillo",
+          "welcome": "Te saluda Ian Franco Bonillo",
           "profession": "Ingeniero de Sistemas",
           "available": "Disponible para trabajar",
           "download_cv": "Descargar CV",
@@ -87,13 +86,13 @@ i18n
           "node": "Node",
           "git": "Git",
           "vite": "Vite",
-          "projects": "Proyectos",
+          "projects": "Aplicaciones",
           "food_truck": "Food Truck",
-          "food_truck_desc": "Es un sistema de pedido para comida rápida, donde los clientes pueden realizar pedidos y pagar con tarjeta de crédito o débito. Fue mi primer proyecto en React.",
+          "food_truck_desc": "Diseño y elaboración de página web, basada en React; en donde el cliente selecciona la opción de su preferencia y realiza los pagos a través de tarjetas de crédito o débito.",
           "v8": "V8",
-          "v8_desc": "Es un sistema de pedido para comida rápida, donde los clientes pueden realizar pedidos y pagar con tarjeta de crédito o débito.",
-          "portfolio": "Mi Portafolio",
-          "portfolio_desc": "Este es mi portafolio, donde puedes ver mis proyectos y mi información personal.",
+          "v8_desc": "Website de comida rápida sustentada en React y typeScript. Este portal, facilita la elección gastronómica y el método de pago del comprado",
+          "portfolio": "Portafolio",
+          "portfolio_desc": "Espacio que suministra información académica, recopilación de trabajos realizados, así como habilidades y herramientas, desarrolladas como Ingeniero de Sistemas y programador",
           "education": "Educación",
           "university": "Universidad",
           "courses": "Cursos",
