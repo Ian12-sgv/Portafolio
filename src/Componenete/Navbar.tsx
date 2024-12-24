@@ -9,6 +9,7 @@ import {
   faMoon,
   faBars,
   faTimes,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Style/Navbar.css";
@@ -108,9 +109,9 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
           </div>
           <div>
             {isOpen && (
-              <button onClick={toggleMenu} className="close-menu-button">
-                <FontAwesomeIcon icon={faTimes} />
-              </button>
+              <a onClick={toggleMenu}>
+                <FontAwesomeIcon icon={faXmark} style={{ color: "Red" }} />
+              </a>
             )}
           </div>
         </div>
