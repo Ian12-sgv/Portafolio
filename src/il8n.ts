@@ -56,7 +56,8 @@ i18n
           "nerdcom": "Nerdcom - 6 months",
           "iclam": "ICLAM - 6 months",
           "home": "Home",
-          "formation": "Formation"
+          "formation": "Formation",
+          "gym_desc" : "This is a gym website, where you can register, log in, and see the different exercises that are available. (not responsive)"
         }
       },
       es: {
@@ -101,7 +102,8 @@ i18n
           "nerdcom": "Nerdcom - 6 meses",
           "iclam": "ICLAM - 6 meses",
           "home": "Inicio",
-          "formation": "Formación"
+          "formation": "Formación",
+          "gym_desc" : "Este es un sitio web de gimnasio, donde puedes registrarte, iniciar sesión y ver los ejercicios disponibles. (no es responsive)"
         }
       }
     }
