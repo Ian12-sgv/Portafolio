@@ -125,9 +125,23 @@ body.dark-mode {
   text-decoration: none;
   color: var(--text-color);
 
-  padding: 10px;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
+}
+
+.proyecto-tecnologias {
+  display: flex;
+  gap: 10%;
+  list-style: none;
+  text-align: start;
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+  font-family: "Barlow", serif;
+  font-weight: 100;
+  font-size: 28px;
+  font-style: normal;
+  color: var(--accent-color);
 }
 
 @media (max-width: 1201px) {
@@ -242,6 +256,20 @@ body.dark-mode {
     align-items: center;
     display: flex;
     gap: 40px;
+  }
+  .proyecto-tecnologias {
+    display: flex;
+    gap: 10%;
+    list-style: none;
+    text-align: start;
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 25px;
+    font-style: normal;
+    color: var(--accent-color);
   }
 }
 
@@ -359,6 +387,20 @@ body.dark-mode {
     display: flex;
     gap: 40px;
   }
+  .proyecto-tecnologias {
+    display: flex;
+    gap: 10%;
+    list-style: none;
+    text-align: start;
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 25px;
+    font-style: normal;
+    color: var(--accent-color);
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -465,6 +507,20 @@ body.dark-mode {
     gap: 0px;
     width: 100%;
   }
+  .proyecto-tecnologias {
+    display: flex;
+    gap: 10%;
+    list-style: none;
+    text-align: start;
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 70%;
+    font-style: normal;
+    color: var(--accent-color);
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -563,6 +619,20 @@ body.dark-mode {
     display: flex;
     gap: 40px;
   }
+  .proyecto-tecnologias {
+    display: flex;
+    gap: 10%;
+    list-style: none;
+    text-align: start;
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 22px;
+    font-style: normal;
+    color: var(--accent-color);
+  }
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
@@ -660,5 +730,19 @@ body.dark-mode {
     align-items: center;
     display: flex;
     gap: 40px;
+  }
+  .proyecto-tecnologias {
+    display: flex;
+    gap: 7%;
+    list-style: none;
+    text-align: start;
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+    font-family: "Barlow", serif;
+    font-weight: 100;
+    font-size: 18px;
+    font-style: normal;
+    color: var(--accent-color);
   }
 }

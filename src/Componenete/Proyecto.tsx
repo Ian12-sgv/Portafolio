@@ -26,14 +26,16 @@ const Proyecto: React.FC<ProyectoProps> = ({
       <div className="proyecto-info">
         <div className="proyecto-titulo">{titulo}</div>
         <p className="proyecto-descripcion">{descripcion}</p>
+        <div className="proyecto-tecnologias">
+          {tecnologias.map((tecnologia, index) => (
+            <div key={index} className="tecnologia">
+              {tecnologia}
+            </div>
+          ))}
+        </div>
 
         <div className="proyecto-botones">
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            {tecnologias.map((tecnologia, index) => (
-              <div key={index} className="tecnologia">
-                {tecnologia}
-              </div>
-            ))}
             <p className="ver-proyecto">Ver Proyecto</p>
             <a href={verProyecto} target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faLaptop} size="1x" color="green" />

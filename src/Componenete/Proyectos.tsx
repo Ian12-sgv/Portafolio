@@ -32,7 +32,7 @@ function Proyectos() {
           src={Binance}
           titulo={t("Binance")}
           descripcion={t("binanance")}
-          tecnologias={[t("react"), t("typescript"), t("api")]}
+          tecnologias={[t("react"), t("typescript"), t("api"), t("chart.js")]}
           verProyecto="https://api-binance-estadistica.netlify.app"
         />
       </div>
