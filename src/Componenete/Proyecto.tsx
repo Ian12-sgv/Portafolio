@@ -7,7 +7,7 @@ interface ProyectoProps {
   src: string;
   titulo: string;
   descripcion: string;
-
+  tecnologias: string[];
   verProyecto: string;
 }
 
@@ -15,7 +15,7 @@ const Proyecto: React.FC<ProyectoProps> = ({
   src,
   titulo,
   descripcion,
-
+  tecnologias,
   verProyecto,
 }) => {
   return (
@@ -29,6 +29,11 @@ const Proyecto: React.FC<ProyectoProps> = ({
 
         <div className="proyecto-botones">
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            {tecnologias.map((tecnologia, index) => (
+              <div key={index} className="tecnologia">
+                {tecnologia}
+              </div>
+            ))}
             <p className="ver-proyecto">Ver Proyecto</p>
             <a href={verProyecto} target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faLaptop} size="1x" color="green" />

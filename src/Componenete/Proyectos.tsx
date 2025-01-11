@@ -16,6 +16,7 @@ function Proyectos() {
           src={FoodTruck}
           titulo={t("food_truck")}
           descripcion={t("food_truck_desc")}
+          tecnologias={[t("react"), t("typescript")]}
           verProyecto="https://camiondecomida.netlify.app/"
         />
 
@@ -23,6 +24,7 @@ function Proyectos() {
           src={Portafolio}
           titulo={t("portfolio")}
           descripcion={t("portfolio_desc")}
+          tecnologias={[t("react"), t("typescript")]}
           verProyecto="https://ianfranco.netlify.app/"
         />
 
@@ -30,6 +32,7 @@ function Proyectos() {
           src={Binance}
           titulo={t("Binance")}
           descripcion={t("binanance")}
+          tecnologias={[t("react"), t("typescript"), t("api")]}
           verProyecto="https://api-binance-estadistica.netlify.app"
         />
       </div>
