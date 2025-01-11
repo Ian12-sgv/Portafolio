@@ -2,7 +2,7 @@ import "../Style/Proyectos.css";
 import Proyecto from "./Proyecto";
 import FoodTruck from "../assets/FoodTruck.png";
 import Portafolio from "../assets/Portafolio.png";
-import Binance from "../assets/Binance.png";
+import Binance from "../assets/binance.png";
 import { useTranslation } from "react-i18next";
 
 function Proyectos() {
