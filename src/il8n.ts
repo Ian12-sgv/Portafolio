@@ -103,7 +103,7 @@ i18n
           "iclam": "ICLAM - 6 meses",
           "home": "Inicio",
           "formation": "Formación",
-          "binanance": "API consumption for cryptocurrency search",
+          "binanance": "Consumo de api para la búsqueda de criptomonedas",
         }
       }
     }
