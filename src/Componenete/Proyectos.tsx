@@ -2,7 +2,7 @@ import "../Style/Proyectos.css";
 import Proyecto from "./Proyecto";
 import FoodTruck from "../assets/FoodTruck.png";
 import Portafolio from "../assets/Portafolio.png";
-import Gym from "../assets/gym.png";
+import Binance from "../assets/Binance.png";
 import { useTranslation } from "react-i18next";
 
 function Proyectos() {
@@ -27,10 +27,10 @@ function Proyectos() {
         />
 
         <Proyecto
-          src={Gym}
-          titulo={t("Gym")}
-          descripcion={t("gym_desc")}
-          verProyecto="https://tiny-heliotrope-631607.netlify.app/"
+          src={Binance}
+          titulo={t("Binance")}
+          descripcion={t("binanance")}
+          verProyecto="https://api-binance-estadistica.netlify.app"
         />
       </div>
     </div>
