@@ -87,7 +87,7 @@ i18n
           "vite": "Vite",
           "projects": "Aplicaciones",
           "food_truck": "Food Truck",
-          "food_truck_desc": "Diseño y elaboración de página web, basada en React; en donde el cliente selecciona la opción de su preferencia y realiza los pagos a través de tarjetas de crédito o débito. (no es responsivo)",
+          "food_truck_desc": "Diseño y elaboración de página web, basada en React; en donde el cliente selecciona la opción de su preferencia y realiza los pagos a través de tarjetas de crédito o débito. (solo en escritorio)",
           "portfolio": "Portafolio",
           "portfolio_desc": "Espacio que suministra información académica, recopilación de trabajos realizados, así como habilidades y herramientas, desarrolladas como Ingeniero de Sistemas y programador",
           "education": "Educación",
