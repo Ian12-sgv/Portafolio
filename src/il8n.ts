@@ -58,6 +58,8 @@ i18n
           "home": "Home",
           "formation": "Formation",
           "binanance": "API consumption for cryptocurrency search",
+          "suscription": "Costea and administra your expenses in real time for streaming services",
+
         }
       },
       es: {
@@ -104,6 +106,7 @@ i18n
           "home": "Inicio",
           "formation": "Formación",
           "binanance": "Consumo de api para la búsqueda de criptomonedas",
+          "suscripcion": "Costea y administra tus gastos en tiempo real para servicios de streaming",
         }
       }
     }

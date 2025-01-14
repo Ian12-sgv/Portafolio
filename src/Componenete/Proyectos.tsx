@@ -3,6 +3,7 @@ import Proyecto from "./Proyecto";
 import FoodTruck from "../assets/FoodTruck.png";
 import Portafolio from "../assets/Portafolio.png";
 import Binance from "../assets/binance.png";
+import Suscripcion from "../assets/Suscripciones.png";
 import { useTranslation } from "react-i18next";
 
 function Proyectos() {
@@ -34,6 +35,13 @@ function Proyectos() {
           descripcion={t("binanance")}
           tecnologias={[t("react"), t("typescript"), t("api"), t("chart.js")]}
           verProyecto="https://api-binance-estadistica.netlify.app"
+        />
+        <Proyecto
+          src={Suscripcion}
+          titulo={t("Suscripcion")}
+          descripcion={t("suscripcion")}
+          tecnologias={[t("react"), t("typescript")]}
+          verProyecto="suscripcion"
         />
       </div>
     </div>
