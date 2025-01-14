@@ -41,7 +41,7 @@ function Proyectos() {
           titulo={t("Suscripcion")}
           descripcion={t("suscripcion")}
           tecnologias={[t("react"), t("typescript")]}
-          verProyecto="suscripcion"
+          verProyecto="https://costo-suscripciones.netlify.app/"
         />
       </div>
     </div>
