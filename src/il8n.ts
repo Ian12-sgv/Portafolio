@@ -59,7 +59,7 @@ i18n
           "formation": "Formation",
           "binanance": "API consumption for cryptocurrency search",
           "suscription": "Costea and administra your expenses in real time for streaming services",
-
+          "convertidor": "Currency converter",
         }
       },
       es: {
@@ -107,6 +107,7 @@ i18n
           "formation": "Formación",
           "binanance": "Consumo de api para la búsqueda de criptomonedas",
           "suscripcion": "Costea y administra tus gastos en tiempo real para servicios de streaming",
+          "convertidor": "Convertidor de divisas",
         }
       }
     }
