@@ -49,7 +49,7 @@ function Proyectos() {
           titulo={t("Convertidor")}
           descripcion={t("convertidor")}
           tecnologias={[t("react"), t("material-ui"), t("API REST")]}
-          verProyecto="https://costo-suscripciones.netlify.app/"
+          verProyecto="https://convertidor-de-divisas.netlify.app/"
         />
       </div>
     </div>
