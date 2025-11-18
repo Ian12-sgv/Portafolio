@@ -1,438 +1,211 @@
-:root {
-  --primary-color: #100e23;
-  --secondary-color: #020024;
-  --accent-color: #20dad8;
-  --text-color: white;
-  --border-color: #020024;
-  --shadow-color: rgba(0, 0, 0, 0.75);
-  --primary-bg-color-light: #e1e8fe;
-  --text-color-light: #4774b8;
-}
+/* =========================
+   Sección FORMACIÓN – estilo Lovable
+   ========================= */
 
-body {
-  transition: background-color 0.3s, color 0.3s;
-  color: var(--text-color);
-}
-
-body.dark-mode {
-  --primary-color: #e1e8fe;
-  --text-color: #4774b8;
-}
-
-.formacion-content {
+.formacion-section {
+  min-height: 80vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  margin-top: 1%;
-  margin-bottom: 2%;
-  font-family: "Barlow", serif;
-  font-weight: 100;
-  font-style: normal;
-  color: var(--text-color);
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: radial-gradient(
+      circle at top left,
+      rgba(148, 237, 233, 0.18),
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      hsl(var(--background)),
+      hsl(var(--background)),
+      hsl(var(--card))
+    );
 }
 
 .formacion-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Título principal "FORMACIÓN" */
+
+.formacion-title {
+  font-family: "Barlow", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+  color: hsl(var(--primary));
+  margin: 0 0 3rem 0;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+}
+
+/* Grid de 2 columnas (Educación / Experiencia) */
+
+.formacion-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 50%;
-  margin-top: 2%;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
 }
 
-p {
-  color: var(--text-color);
+@media (min-width: 768px) {
+  .formacion-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+  }
 }
 
-.cursos-lista {
-  list-style-type: none;
-  padding-left: 0;
-  color: var(--text-color);
-  font-family: "Barlow", serif;
-  font-weight: 100;
-  font-style: normal;
-  font-size: 110%;
+/* Columna */
+
+.formacion-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
 }
 
-.cursos-lista li {
-  margin-bottom: 10px;
+/* Subtítulos: "Educación" / "Experiencia profesional" */
+
+.formacion-subtitle {
+  font-family: "Barlow", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: hsl(var(--secondary));
+  margin: 0 0 0.5rem 0;
 }
 
-h1,
-h3 {
-  margin: 10px 0;
+/* =========================
+   Tarjetas (simulando Card de Lovable)
+   ========================= */
+
+.form-card {
+  background-color: hsl(var(--background));
+  border: 2px solid hsl(var(--border));
+  border-radius: 0.85rem;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease,
+    background-color 0.3s ease;
 }
 
-h1 {
+.form-card:hover {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 18px 40px -18px rgba(32, 218, 216, 0.35);
+  transform: translateY(-3px);
+}
+
+/* Header de la card */
+
+.form-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.form-card-icon {
   font-size: 2rem;
-  color: var(--accent-color);
+  flex-shrink: 0;
 }
 
-h3 {
-  font-size: 1.5rem;
-  color: var(--text-color);
+.form-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
+
+/* Títulos dentro de card ("Universidad", "Desarrollador front-end"... ) */
+
+.form-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin: 0;
+}
+
+/* Texto descriptivo */
+
+.form-card-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Universidad nombre largo */
 
 .universidad {
-  width: 80%;
-  font-family: "Barlow", serif;
-  font-weight: 100;
-  font-style: normal;
-  font-size: 110%;
-  color: var(--text-color);
+  font-style: italic;
 }
 
-.experiencia-info {
-  font-family: "Barlow", serif;
-  font-weight: 100;
-  font-style: normal;
-  font-size: 110%;
-  color: var(--text-color);
+/* Fechas / meta info */
+
+.form-card-meta {
+  margin: 0.35rem 0 0 0;
+  font-size: 0.85rem;
+  color: hsl(var(--muted-foreground));
 }
 
-@media (max-width: 1201px) {
-  .formacion-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    margin-top: 1%;
-    font-family: "Barlow", serif;
-    font-weight: 100;
+/* =========================
+   Cursos
+   ========================= */
 
-    font-style: normal;
-    color: var(--text-color);
+.form-courses {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.form-courses-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin: 0;
+}
+
+/* =========================
+   Animación fade-in
+   ========================= */
+
+.animate-fade-in {
+  opacity: 0;
+  animation: form-fade-in-up 0.6s ease forwards;
+}
+
+@keyframes form-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
   }
-
-  .formacion-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    width: 50%;
-    margin-top: 5%;
-  }
-
-  p {
-    color: var(--text-color);
-  }
-  .cursos-lista {
-    list-style-type: none;
-    padding-left: 0;
-    color: var(--text-color);
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 100%;
-  }
-
-  .cursos-lista li {
-    margin-bottom: 10px;
-  }
-
-  h1,
-  h3 {
-    margin: 10px 0;
-  }
-
-  h1 {
-    font-size: 2rem;
-    color: var(--accent-color);
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    color: var(--text-color);
-  }
-
-  .universidad {
-    width: 80%;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 110%;
-    color: var(--text-color);
-  }
-
-  .experiencia-info {
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 110%;
-    color: var(--text-color);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1200px) {
-  .formacion-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    margin-top: 1%;
-    font-family: "Barlow", serif;
-    font-weight: 100;
+/* =========================
+   Responsive ajustes finos
+   ========================= */
 
-    font-style: normal;
-    color: var(--text-color);
+@media (max-width: 480px) {
+  .formacion-section {
+    padding: 2.5rem 1rem;
   }
 
-  .formacion-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    width: 50%;
-    margin-top: 5%;
+  .form-card {
+    padding: 1.1rem 1.25rem;
   }
 
-  p {
-    color: var(--text-color);
-  }
-  .cursos-lista {
-    list-style-type: none;
-    padding-left: 0;
-    color: var(--text-color);
+  .formacion-subtitle {
+    font-size: 1.4rem;
   }
 
-  .cursos-lista li {
-    margin-bottom: 10px;
-  }
-
-  h1,
-  h3 {
-    margin: 10px 0;
-  }
-
-  h1 {
-    font-size: 2rem;
-    color: var(--accent-color);
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    color: var(--text-color);
-  }
-
-  .universidad {
-    width: 80%;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 110%;
-  }
-
-  .experiencia-info {
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 110%;
-  }
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-  .formacion-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    margin-top: 5%;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-style: normal;
-    color: var(--text-color);
-  }
-
-  .formacion-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    width: 50%;
-    margin-top: 5%;
-    margin-bottom: 2%;
-  }
-
-  p {
-    color: var(--text-color);
-  }
-  .cursos-lista {
-    list-style-type: none;
-    padding-left: 0;
-    color: var(--text-color);
-  }
-
-  .cursos-lista li {
-    margin-bottom: 10px;
-  }
-
-  h1,
-  h3 {
-    margin: 10px 0;
-  }
-
-  h1 {
-    font-size: 2rem;
-    color: var(--accent-color);
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    color: var(--text-color);
-  }
-
-  .universidad {
-    width: 80%;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 110%;
-  }
-
-  .experiencia-info {
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 110%;
-  }
-}
-@media (min-width: 481px) and (max-width: 768px) {
-  .formacion-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    margin-top: 5%;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-style: normal;
-    color: var(--text-color);
-  }
-
-  .formacion-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 70%;
-    gap: 10%;
-    margin-top: 5%;
-    margin-left: 15%;
-    margin-bottom: 2%;
-  }
-
-  p {
-    color: var(--text-color);
-  }
-  .cursos-lista {
-    list-style-type: none;
-    padding-left: 0;
-    color: var(--text-color);
-  }
-
-  .cursos-lista li {
-    margin-bottom: 10px;
-  }
-
-  h1,
-  h3 {
-    margin: 10px 0;
-  }
-
-  h1 {
-    font-size: 2rem;
-    color: var(--accent-color);
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    color: var(--text-color);
-  }
-
-  .universidad {
-    width: 80%;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 110%;
-  }
-
-  .experiencia-info {
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 110%;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-  .formacion-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    margin-top: 18%;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-style: normal;
-    color: var(--text-color);
-  }
-
-  .formacion-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    width: 90%;
-    gap: 0%;
-    margin-top: 2%;
-
-    margin-bottom: 5%;
-  }
-
-  p {
-    color: var(--text-color);
-  }
-  .cursos-lista {
-    list-style-type: none;
-    padding-left: 0;
-    color: var(--text-color);
-  }
-
-  .cursos-lista li {
-    margin-bottom: 10px;
-  }
-
-  h1,
-  h3 {
-    margin: 10px 0;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-    color: var(--accent-color);
-  }
-
-  h3 {
+  .form-card-title {
     font-size: 1rem;
-    color: var(--text-color);
   }
 
-  .universidad {
-    width: 80%;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 110%;
-  }
-
-  .experiencia-info {
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 110%;
+  .form-card-text {
+    font-size: 0.9rem;
   }
 }

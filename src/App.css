@@ -1,53 +1,90 @@
+/* =========================
+   Variables globales
+   ========================= */
+
 :root {
-  --primary-bg-color: #01081f;
-  --border-color: #0c011f;
-  --contact-padding: 10px;
-  --footer-bg-color: #01081f;
-  --primary-bg-color-light: #e1e8fe;
-  --border-color-light: #47a2b8;
+  --primary-bg-color: #020617; /* fondo base oscuro */
+  --primary-bg-color-light: #e1e8fe; /* fondo cuando activas "dark-mode" (tema claro) */
+
+  --border-color: #1f2933;
+  --border-color-light: #cbd5f5;
+
+  --footer-bg-color: #020617;
   --footer-bg-color-light: #e1e8fe;
-  --text-color: #ffffff;
+
+  --text-color: #e2e8f0;
   --text-color-light: #4774b8;
+
+  --contact-padding: 12px;
 }
+
+/* =========================
+   Body / tema
+   ========================= */
 
 body {
-  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  min-height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   color: var(--text-color);
+
+  /* fondo general del sitio */
+  background: radial-gradient(
+    circle at top left,
+    #02091f 0,
+    #020617 40%,
+    #020617 100%
+  );
   background-color: var(--primary-bg-color);
+
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* OJO: en tu lógica actual "dark-mode" significa tema CLARO */
 body.dark-mode {
-  --primary-bg-color: #e1e8fe;
-  --border-color: #807f83;
-  --footer-bg-color: #e1e8fe;
-  --text-color: #4774b8;
-  background-color: var(--primary-bg-color);
+  --primary-bg-color: var(--primary-bg-color-light);
+  --border-color: var(--border-color-light);
+  --footer-bg-color: var(--footer-bg-color-light);
+  --text-color: var(--text-color-light);
+
+  background: var(--primary-bg-color);
   color: var(--text-color);
 }
+
+/* =========================
+   Layout general
+   ========================= */
 
 .portafolio {
   width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: "main" "footer";
-  gap: 0%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: var(--primary-bg-color);
 }
 
 .main {
-  grid-area: main;
-  display: grid;
-  width: 100%;
-  height: 100%;
-  grid-template-rows: auto;
-  gap: 0%;
-  background-color: var(--primary-bg-color);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
+/* cada sección ocupa el ancho completo;
+   los paddings/márgenes se manejan en sus propios CSS */
+.presentacion,
+.habilidades,
+.proyectos,
+.formacion {
+  width: 100%;
+  scroll-margin-top: 120px; /* mismo valor que headerOffset */
+}
+
+/* =========================
+   Footer
+   ========================= */
+
 .footer {
-  grid-area: footer;
-  height: 100%;
   width: 100%;
   border-top: 1px solid var(--border-color);
   background-color: var(--footer-bg-color);
@@ -62,78 +99,17 @@ body.dark-mode {
 }
 
 .icon-footer {
-  color: var(--icon-color);
+  color: inherit;
 }
 
-.presentacion,
-.habilidades,
-.proyectos,
-.formacion {
-  width: 100%;
-  height: 100%;
-}
+/* =========================
+   Responsive
+   ========================= */
 
-@media (min-width: 320px) and (max-width: 480px),
-  (min-width: 481px) and (max-width: 768px),
-  (min-width: 769px) and (max-width: 1024px),
-  (min-width: 1025px) and (max-width: 1200px),
-  (min-width: 1201px) {
-  .portafolio {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas: "main" "footer";
-  }
-
-  .main {
-    grid-area: main;
-    display: grid;
-    height: 100%;
-    width: 100%;
-    grid-template-rows: auto;
-    background-color: var(--primary-bg-color);
-  }
-
-  .footer {
-    grid-area: footer;
-    background-color: var(--footer-bg-color);
-    width: 100%;
-    border-top: 1px solid var(--border-color);
-  }
-
+@media (max-width: 768px) {
   .contact {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 1px solid var(--border-color);
-  }
-
-  .presentacion {
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 20%;
-    width: 100%;
-    height: 105%;
-  }
-
-  .habilidades {
-    margin-bottom: 0%;
-    width: 100%;
-  }
-
-  .proyectos {
-    margin-bottom: 0%;
-    width: 100%;
-    height: 100%;
-  }
-
-  .formacion {
-    border-bottom: 1px solid var(--border-color);
-    width: 100%;
-    height: 100%;
-  }
-
-  .icon-footer {
-    color: var(--icon-color);
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
   }
 }

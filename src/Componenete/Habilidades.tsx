@@ -1,9 +1,8 @@
 import "../Style/Habilidades.css";
-import Icon from "./Icon";
 import css3 from "../assets/css.png";
 import html5 from "../assets/html.png";
 import js from "../assets/javascript.png";
-import typreScript from "../assets/typescript.png";
+import typeScript from "../assets/typescript.png";
 import bootstrap from "../assets/svg/bootstrap.svg";
 import material from "../assets/svg/material-ui.svg";
 import react from "../assets/svg/react.svg";
@@ -15,65 +14,120 @@ import git from "../assets/svg/git.svg";
 import vite from "../assets/svg/Vite.svg";
 import { useTranslation } from "react-i18next";
 
+type Skill = {
+  key: string;
+  src: string;
+};
+
 function Habilidades() {
   const { t } = useTranslation();
 
-  return (
-    <div className="Habilidades">
-      {t("skills")}
-      <div className="aprendiendo-container">
-        <div className="aprendiendo-front">
-          <h1 className="titulo">{t("frontend")}</h1>
-          <div className="front">
-            <div>
-              <Icon src={css3} p={t("css")} />
-            </div>
-            <div>
-              <Icon src={html5} p={t("html")} />
-            </div>
-            <div>
-              <Icon src={js} p={t("javascript")} />
-            </div>
-            <div>
-              <Icon src={bootstrap} p={t("bootstrap")} />
-            </div>
-            <div>
-              <Icon src={material} p={t("material_ui")} />
-            </div>
-            <div>
-              <Icon src={react} p={t("react")} />
-            </div>
-          </div>
-        </div>
-        <div className="aprendiendo-back">
-          <h1 className="titulo">{t("backend")}</h1>
-          <div className="back">
-            <div>
-              <Icon src={typreScript} p={t("typescript")} />
-            </div>
-            <div>
-              <Icon src={php} p={t("php")} />
-            </div>
-            <div>
-              <Icon src={mysql} p={t("mysql")} />
-            </div>
-            <div>
-              <Icon src={laravel} p={t("laravel")} />
-            </div>
-            <div>
-              <Icon src={node} p={t("node")} />
-            </div>
-          </div>
-        </div>
+  const frontEndSkills: Skill[] = [
+    { key: "css", src: css3 },
+    { key: "html", src: html5 },
+    { key: "javascript", src: js },
+    { key: "bootstrap", src: bootstrap },
+    { key: "material_ui", src: material },
+    { key: "react", src: react },
+  ];
 
-        <div className="aprendiendo-complementos">
-          <h1 className="titulo">{t("complements")}</h1>
-          <div className="complementos">
-            <div>
-              <Icon src={git} p={t("git")} />
+  const backEndSkills: Skill[] = [
+    { key: "typescript", src: typeScript },
+    { key: "php", src: php },
+    { key: "mysql", src: mysql },
+    { key: "laravel", src: laravel },
+    { key: "node", src: node },
+  ];
+
+  const complementSkills: Skill[] = [
+    { key: "git", src: git },
+    { key: "vite", src: vite },
+  ];
+
+  return (
+    <div className="skills-section">
+      <div className="skills-container">
+        {/* Título principal */}
+        <h2 className="skills-title animate-fade-in">
+          {t("skills") /* Ej: HABILIDADES */}
+        </h2>
+
+        <div className="skills-grid">
+          {/* Front-end */}
+          <div
+            className="skills-column animate-fade-in"
+            style={{ animationDelay: "100ms" }}
+          >
+            <h3 className="skills-column-title">{t("frontend")}</h3>
+            <div className="skills-cards-grid">
+              {frontEndSkills.map((skill, index) => (
+                <div
+                  key={skill.key}
+                  className="skill-card"
+                  style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                >
+                  <div className="skill-icon-wrapper">
+                    <img
+                      src={skill.src}
+                      alt={t(skill.key)}
+                      className="skill-icon-image"
+                    />
+                  </div>
+                  <p className="skill-name">{t(skill.key)}</p>
+                </div>
+              ))}
             </div>
-            <div>
-              <Icon src={vite} p={t("vite")} />
+          </div>
+
+          {/* Back-end */}
+          <div
+            className="skills-column animate-fade-in"
+            style={{ animationDelay: "200ms" }}
+          >
+            <h3 className="skills-column-title">{t("backend")}</h3>
+            <div className="skills-cards-grid">
+              {backEndSkills.map((skill, index) => (
+                <div
+                  key={skill.key}
+                  className="skill-card"
+                  style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                >
+                  <div className="skill-icon-wrapper">
+                    <img
+                      src={skill.src}
+                      alt={t(skill.key)}
+                      className="skill-icon-image"
+                    />
+                  </div>
+                  <p className="skill-name">{t(skill.key)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Complementos */}
+          <div
+            className="skills-column animate-fade-in"
+            style={{ animationDelay: "300ms" }}
+          >
+            <h3 className="skills-column-title">{t("complements")}</h3>
+            <div className="skills-cards-grid">
+              {complementSkills.map((skill, index) => (
+                <div
+                  key={skill.key}
+                  className="skill-card"
+                  style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                >
+                  <div className="skill-icon-wrapper">
+                    <img
+                      src={skill.src}
+                      alt={t(skill.key)}
+                      className="skill-icon-image"
+                    />
+                  </div>
+                  <p className="skill-name">{t(skill.key)}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

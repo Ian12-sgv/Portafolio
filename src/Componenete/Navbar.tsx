@@ -5,13 +5,11 @@ import {
   faLayerGroup,
   faBookOpen,
   faLaptopCode,
-  faSun,
-  faMoon,
   faBars,
-  faTimes,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Moon, Sun } from "lucide-react";
 import "../Style/Navbar.css";
 
 interface NavbarProps {
@@ -19,19 +17,50 @@ interface NavbarProps {
   toggleTheme: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
-  const [activeSection, setActiveSection] = useState<string>("");
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+type NavItem = {
+  id: string;
+  label: string;
+  labelShort?: string;
+  icon: any;
+};
 
+const navItems: NavItem[] = [
+  { id: "presentacion", label: "Inicio", labelShort: "Inicio", icon: faHome },
+  { id: "habilidades", label: "Habilidades", icon: faLayerGroup },
+  { id: "proyectos", label: "Proyectos", icon: faLaptopCode },
+  { id: "formacion", label: "Formación", icon: faBookOpen },
+];
+
+// duración de la animación en ms (debe coincidir con el CSS)
+const MENU_ANIMATION_MS = 550;
+
+const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
+  const [activeSection, setActiveSection] = useState<string>("presentacion");
+
+  // isOpen = panel completamente abierto
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  // isClosing = está corriendo la animación de cierre
+  const [isClosing, setIsClosing] = useState<boolean>(false);
+
+  const isMenuVisible = isOpen || isClosing;
+
+  // === Scroll spy (sección activa) ===
   useEffect(() => {
     const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
-      let currentSection = "";
+      const sections = document.querySelectorAll<HTMLElement>("section[id]");
+      const scrollPos = window.scrollY;
+      let currentSection = activeSection;
 
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 50) {
-          currentSection = section.getAttribute("id") || "";
+        const offsetTop = section.offsetTop;
+        const height = section.offsetHeight;
+
+        // margen para compensar la altura del header
+        if (
+          scrollPos >= offsetTop - 120 &&
+          scrollPos < offsetTop + height - 120
+        ) {
+          currentSection = section.id;
         }
       });
 
@@ -39,83 +68,142 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    handleScroll(); // marcar la sección inicial al cargar
+    return () => window.removeEventListener("scroll", handleScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  // === Bloquear scroll cuando el menú (modal) está visible en mobile ===
+  useEffect(() => {
+    const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+
+    if (isMobile && isMenuVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuVisible]);
+
+  const openMenu = () => {
+    setIsClosing(false);
+    setIsOpen(true);
   };
 
-  const handleLinkClick = () => {
-    setIsOpen(false);
+  const closeMenu = () => {
+    // si ya está cerrando, no repetir
+    if (!isOpen || isClosing) return;
+
+    setIsClosing(true);
+
+    // esperamos a que termine la animación CSS
+    setTimeout(() => {
+      setIsOpen(false);
+      setIsClosing(false);
+    }, MENU_ANIMATION_MS);
+  };
+
+  const toggleMenu = () => {
+    if (!isMenuVisible) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  };
+
+  // === Scroll suave con offset del header ===
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
+    e.preventDefault();
+    const el = document.getElementById(sectionId);
+    if (!el) {
+      closeMenu();
+      return;
+    }
+
+    const headerOffset = 120; // altura aproximada del navbar
+    const rect = el.getBoundingClientRect();
+    const offset = rect.top + window.scrollY - headerOffset;
+
+    window.scrollTo({
+      top: offset,
+      behavior: "smooth",
+    });
+
+    closeMenu();
   };
 
   return (
     <nav className={`navbar ${isDarkMode ? "dark-mode" : ""}`}>
+      {/* Botón menú móvil (solo visible por CSS en <=1024px) */}
       <div className="button-container">
-        <div className="floating-bubble" onClick={toggleMenu}>
-          <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
-        </div>
+        <button
+          className="floating-bubble"
+          onClick={toggleMenu}
+          aria-label={isMenuVisible ? "Cerrar menú" : "Abrir menú"}
+        >
+          <FontAwesomeIcon icon={faBars} />
+        </button>
       </div>
-      <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-        <li>
-          <a
-            href="#presentacion"
-            className={activeSection === "presentacion" ? "active" : ""}
-            onClick={handleLinkClick}
+
+      {/* Contenedor principal: enlaces + toggle de tema */}
+      <ul
+        className={`nav-links ${isMenuVisible ? "open" : ""} ${
+          isClosing ? "closing" : ""
+        }`}
+      >
+        {/* Botón de cierre redondo dentro del modal (solo mobile) */}
+        {isMenuVisible && (
+          <button
+            type="button"
+            className="close-modal-btn"
+            onClick={closeMenu}
+            aria-label="Cerrar menú"
           >
-            <Enlace icon={faHome} text="Inicio" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="#habilidades"
-            className={activeSection === "habilidades" ? "active" : ""}
-            onClick={handleLinkClick}
+            <FontAwesomeIcon icon={faXmark} />
+          </button>
+        )}
+
+        {navItems.map((item, index) => (
+          <li
+            key={item.id}
+            className="nav-item-fade"
+            style={{ animationDelay: `${index * 100}ms` }}
           >
-            <Enlace icon={faLayerGroup} text="Habilidades" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="#proyectos"
-            className={activeSection === "proyectos" ? "active" : ""}
-            onClick={handleLinkClick}
-          >
-            <Enlace icon={faLaptopCode} text="Proyectos" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="#formacion"
-            className={activeSection === "formacion" ? "active" : ""}
-            onClick={handleLinkClick}
-          >
-            <Enlace icon={faBookOpen} text="Formacion" />
-          </a>
-        </li>
-        <div className="theme-toggle-container">
-          <div>
-            {" "}
-            <a onClick={toggleTheme} className="theme-toggle-button">
-              {isDarkMode ? (
-                <FontAwesomeIcon icon={faSun} />
-              ) : (
-                <FontAwesomeIcon icon={faMoon} />
-              )}
+            <a
+              href={`#${item.id}`}
+              className={activeSection === item.id ? "active" : ""}
+              onClick={(e) => handleNavClick(e, item.id)}
+            >
+              <Enlace icon={item.icon} text={item.label} />
             </a>
-          </div>
-          <div>
-            {isOpen && (
-              <a onClick={toggleMenu}>
-                <FontAwesomeIcon icon={faXmark} style={{ color: "Red" }} />
-              </a>
+          </li>
+        ))}
+
+        {/* Toggle de tema con iconos Lucide (Moon / Sun) */}
+        <div className="theme-toggle-container">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="theme-toggle-button"
+            aria-label="Cambiar tema"
+          >
+            {isDarkMode ? (
+              <Sun className="theme-icon sun-icon" />
+            ) : (
+              <Moon className="theme-icon moon-icon" />
             )}
-          </div>
+          </button>
         </div>
       </ul>
+
+      {/* Overlay para efecto modal: click fuera del panel cierra el menú */}
+      {isMenuVisible && <div className="nav-overlay" onClick={closeMenu} />}
     </nav>
   );
 };

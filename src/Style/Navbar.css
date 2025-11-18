@@ -1,385 +1,360 @@
-:root {
-  --primary-bg-color: #01081f;
-  --border-color: rgb(126, 126, 126);
-  --contact-padding: 10px;
-  --footer-bg-color: #01081f;
-  --primary-bg-color-light: #ffffff;
-  --border-color-light: rgb(200, 200, 200);
-  --footer-bg-color-light: #f1f1f1;
-  --text-color: #ffffff;
-  --text-color-light: #000000;
-}
 html {
   scroll-behavior: smooth;
 }
+
+/* =======================
+   NAVBAR – estilo Lovable
+   ======================= */
+
 .navbar {
-  display: flex;
   position: fixed;
   top: 0;
-  width: 100%;
-  background-color: var(--primary-bg-color);
-  transition: background-color 0.3s ease;
-  border-bottom: 1px solid var(--border-color);
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(2, 6, 23, 0.82); /* bg-background/80 aprox */
+  backdrop-filter: blur(16px); /* backdrop-blur-lg */
+  border-bottom: 1px solid rgba(148, 163, 184, 0.5); /* border-border/50 */
+  animation: nav-fade-in 0.4s ease-out;
   color: var(--text-color);
 }
 
-.navbar.dark-mode {
-  background-color: var(--primary-bg-color);
-  color: var(--text-color);
+/* contenedor principal: imita max-w-7xl mx-auto px-6 py-4 */
+.nav-links {
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* gap-8 */
+  list-style: none;
+  font-family: "Barlow", serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* quitar bullets a <li> y spacing raro */
+.nav-links li {
+  list-style: none;
 }
 
 .navbar a {
-  color: var(--text-color);
-  list-style-type: none;
   text-decoration: none;
-  padding: 0;
-  margin: 0;
+  color: rgba(248, 250, 252, 0.8); /* text-foreground/80 */
 }
 
-.nav-links {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  list-style-type: none;
-  align-items: center;
-  font-family: "Barlow", serif;
-  font-weight: 100;
-  font-size: 20px;
-  font-style: normal;
+/* ===== Enlaces (Inicio, Habilidades, Proyectos, Formación) ===== */
+
+.nav-links li a {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  transition: color 0.3s ease;
 }
+
+/* línea animada (tipo group-hover:w-full) */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background-color: #20dad8; /* primary */
+  transition: width 0.3s ease;
+}
+
+/* hover: color + línea de izquierda a derecha */
+.nav-links li a:hover {
+  color: #20dad8;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* enlace activo (scroll spy) */
+.nav-links a.active {
+  color: #20dad8;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* =======================
+   Botón de tema (Moon / Sun)
+   ======================= */
+
+.theme-toggle-container {
+  margin-left: auto; /* empuja el icono a la derecha */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* botón circular tipo Lovable */
+.theme-toggle-button {
+  background: none;
+  border: 1px solid transparent;
+  color: rgba(248, 250, 252, 0.9);
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* iconos lucide (Moon / Sun) */
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* hover igual a Lovable: fondo turquesa suave + rotación */
+.theme-toggle-button:hover {
+  background-color: rgba(32, 218, 216, 0.1); /* hover:bg-primary/10 */
+  color: #20dad8; /* hover:text-primary */
+  border-color: #20dad8;
+  transform: translateY(-1px);
+}
+
+.theme-toggle-button:hover .moon-icon {
+  transform: rotate(12deg);
+}
+
+.theme-toggle-button:hover .sun-icon {
+  transform: rotate(180deg);
+}
+
+/* =======================
+   Botón menú (hamburguesa)
+   ======================= */
+
+.button-container {
+  display: none; /* solo en móvil */
+}
+
 .floating-bubble {
   display: none;
 }
 
-@media (max-width: 1201px) {
+/* =======================
+   TABLET / MÓVIL
+   ======================= */
+
+@media (max-width: 1024px) {
+  /* barra superior tipo Lovable:
+     [☰]                         [🌙]  */
   .navbar {
-    align-items: center;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-size: 20px;
-    font-style: normal;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+  }
+
+  /* botón menú visible en móvil */
+  .button-container {
+    display: block;
+  }
+
+  .floating-bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent; /* sin fondo */
+    border: none; /* sin borde */
+    color: rgba(248, 250, 252, 0.9); /* mismo color que el texto */
+    font-size: 1.4rem; /* tamaño del ícono (las 3 rayas) */
+    cursor: pointer;
+    padding: 0.25rem 0.35rem; /* área clickeable */
+  }
+
+  .floating-bubble:hover {
+    background-color: rgba(15, 23, 42, 0.9); /* ligero fondo al hover */
+    border-radius: 999px;
+  }
+
+  /* nav-links en barra superior:
+     solo mostramos el toggle de tema */
+  .nav-links {
+    padding: 0;
+    margin: 0;
+    width: auto;
+    gap: 0;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .nav-links li {
+    display: none; /* ocultar enlaces mientras el panel esté cerrado */
+  }
+
+  .theme-toggle-container {
+    margin-left: 0;
+  }
+
+  /* ===== PANEL LATERAL (abierto o cerrando) ===== */
+  .nav-links.open {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 0;
+    height: 100vh; /* cubre todo el alto de la pantalla */
+    width: 70%; /* cubre el 70% del ancho */
+    padding: 1.8rem 1.5rem;
+    background: #020617;
+    border-right: 1px solid rgba(148, 163, 184, 0.6);
+    border-radius: 0 12px 12px 0;
     display: flex;
-    justify-content: space-around;
-    background-color: var(--primary-bg-color);
-    transition: background-color 0.3s ease;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-color);
-  }
-  .navbar.dark-mode {
-    background-color: var(--primary-bg-color);
-    color: var(--text-color);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+    font-size: 1.1rem;
+    z-index: 1050;
+    animation: slide-in-menu 0.55s ease-out forwards;
   }
 
-  .navbar a {
-    color: var(--text-color);
-    list-style-type: none;
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
+  /* cuando tiene clase closing, usamos la animación inversa */
+  .nav-links.open.closing {
+    animation: slide-out-menu 0.55s ease-in forwards;
   }
 
-  .nav-links {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    list-style-type: none;
-    align-items: center;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-size: 20px;
-    font-style: normal;
+  .nav-links.open li {
+    display: block; /* mostrar enlaces en el panel */
   }
-  .floating-bubble {
-    display: none;
+
+  .nav-links.open a {
+    color: #e5e7eb;
+    font-weight: 500;
+  }
+
+  /* dentro del panel: tema al fondo, tipo footer */
+  .nav-links.open .theme-toggle-container {
+    width: 100%;
+    margin-top: auto;
+    justify-content: space-between;
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1200px) {
-  .navbar {
-    align-items: center;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-size: 20px;
-    font-style: normal;
-    display: flex;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    background-color: var(--primary-bg-color);
-    transition: background-color 0.3s ease;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-color);
-  }
-  .navbar.dark-mode {
-    background-color: var(--primary-bg-color);
-    color: var(--text-color);
-  }
-
-  .navbar a {
-    color: var(--text-color);
-    list-style-type: none;
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
-  }
-  .nav-links {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    list-style-type: none;
-    align-items: center;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-size: 20px;
-    font-style: normal;
-  }
-  .floating-bubble {
-    display: none;
+/* móviles pequeños: también 70% de ancho */
+@media (max-width: 480px) {
+  .nav-links.open {
+    width: 70%;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .floating-bubble {
+/* =======================
+   Botón de cerrar dentro del modal
+   ======================= */
+
+.close-modal-btn {
+  display: none; /* se muestra solo en mobile cuando el menú está abierto */
+}
+
+@media (max-width: 1024px) {
+  .nav-links.open .close-modal-btn {
     display: flex;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    border: 2px solid #20dad8; /* círculo turquesa */
+    box-shadow: 0 0 0 2px rgba(32, 218, 216, 0.25); /* aro externo */
+    background: transparent;
+    color: #e5e7eb;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    top: 12%;
-    left: -15px;
-    width: 12%;
-    padding-left: 10px;
-    height: 60px;
-    border-radius: 50%;
-    font-size: 40px;
     cursor: pointer;
-    z-index: 1000;
-    border-radius: 80px;
-    background-color: var(--primary-bg-color);
-    transition: background-color 0.3s ease;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-color);
-  }
-  .navbar.dark-mode {
-    background-color: var(--primary-bg-color);
-    color: var(--text-color);
-  }
-  .nav-links {
-    display: none;
-    gap: 2rem;
-    flex-direction: column;
-    width: 25%;
-    height: 100%;
-    background-color: var(--primary-bg-color);
-    position: fixed;
-    top: 0%;
-    left: 0;
-    z-index: 1000;
-    align-items: start;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-size: 1.5rem;
-    font-style: normal;
-    border: 1px solid var(--border-color);
-    border-radius: 1% 4% 4% 1%;
-  }
-  .nav-links.open {
-    display: flex;
-    margin: 0;
-    padding: 1rem;
-  }
-  .nav-links li {
-    text-align: center;
+    transition: background-color 0.2s ease, transform 0.2s ease,
+      box-shadow 0.2s ease;
+    z-index: 1060;
   }
 
-  .navbar a {
-    color: var(--text-color);
-    list-style-type: none;
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .close-button button {
-    background-color: white;
-    color: red;
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    position: absolute;
-  }
-  .theme-toggle-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  .nav-links.open .close-modal-btn:hover {
+    background-color: rgba(32, 218, 216, 0.12);
+    transform: scale(1.03);
+    box-shadow: 0 0 0 3px rgba(32, 218, 216, 0.4);
   }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
-  .floating-bubble {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 12%;
-    left: -15px;
-    width: 12%;
-    padding-left: 10px;
-    height: 60px;
-    border-radius: 50%;
-    font-size: 40px;
-    cursor: pointer;
-    z-index: 1000;
-    border-radius: 80px;
-    background-color: var(--primary-bg-color);
-    transition: background-color 0.3s ease;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-color);
-  }
-  .navbar.dark-mode {
-    background-color: var(--primary-bg-color);
-    color: var(--text-color);
-  }
-  .nav-links {
-    display: none;
-    gap: 1rem;
-    flex-direction: column;
-    width: 30%;
-    height: 100%;
-    position: fixed;
-    top: 0%;
-    left: 0;
-    z-index: 1000;
-    align-items: start;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-size: 1.5rem;
-    font-style: normal;
-    border: 0px solid #1c6ea4;
-    background-color: var(--primary-bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 1% 4% 4% 1%;
-  }
-  .nav-links.open {
-    display: flex;
-    margin: 0;
-    padding: 1rem;
-  }
-  .nav-links li {
-    text-align: center;
-  }
+/* =======================
+   Animaciones
+   ======================= */
 
-  .navbar a {
-    color: var(--text-color);
-    list-style-type: none;
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
+@keyframes nav-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
   }
-
-  .close-button button {
-    background-color: white;
-    color: red;
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    position: absolute;
-  }
-  .theme-toggle-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
-  .floating-bubble {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 12%;
-    left: -5%;
-    width: 20%;
-    padding-left: 5%;
-    height: 7%;
-    border-radius: 50%;
-    font-size: 40px;
-    cursor: pointer;
-    z-index: 1000;
-    border-radius: 80px;
-    background-color: var(--primary-bg-color);
-    transition: background-color 0.3s ease;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-color);
-  }
-  .navbar.dark-mode {
-    background-color: var(--primary-bg-color);
-    color: var(--text-color);
-  }
-  .nav-links {
-    display: none;
-    gap: 1rem;
-    flex-direction: column;
-    width: 50%;
-    height: 100%;
-    position: fixed;
-    top: 0%;
-    left: 0;
-    z-index: 1000;
-    align-items: start;
-    font-family: "Barlow", serif;
-    font-weight: 100;
-    font-size: 1.5rem;
-    font-style: normal;
-    border: 0px solid #1c6ea4;
-    background-color: var(--primary-bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 1% 4% 4% 1%;
-  }
-  .nav-links.open {
-    display: flex;
-    margin: 0;
-    padding: 1rem;
-  }
-  .nav-links li {
-    text-align: center;
-  }
+/* animación individual para cada item (usada con .nav-item-fade) */
+.nav-item-fade {
+  animation: nav-item-fade-in 0.4s ease-out both;
+}
 
-  .navbar a {
-    color: var(--text-color);
-    list-style-type: none;
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
+@keyframes nav-item-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
   }
-
-  .close-button button {
-    background-color: white;
-    color: red;
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    position: absolute;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  .theme-toggle-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+/* Animación del panel: entra desde la izquierda */
+@keyframes slide-in-menu {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animación del panel: sale hacia la izquierda */
+@keyframes slide-out-menu {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* =======================
+   Overlay del modal del menú móvil
+   ======================= */
+
+.nav-overlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(2px);
+  z-index: 1040; /* un poco menos que nav-links.open (1050) */
+  display: none;
+}
+
+/* Solo mostramos el overlay en mobile/tablet */
+@media (max-width: 1024px) {
+  .nav-overlay {
+    display: block;
   }
 }
