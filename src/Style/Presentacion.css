@@ -131,7 +131,7 @@ body {
 .mi-presentacion {
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
+  /*gap: 1.3rem;*/
 }
 
 .profesion {
@@ -293,7 +293,7 @@ body {
 
 @media (max-width: 480px) {
   .presentacion-container {
-    padding: 3rem 1rem 2.2rem;
+    padding: 2rem 1rem 2.2rem;
   }
 
   .hero-avatar {
