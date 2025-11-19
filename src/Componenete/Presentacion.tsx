@@ -1,5 +1,4 @@
 import "../Style/Presentacion.css";
-import TextCycle from "./TypingText";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
@@ -12,7 +11,6 @@ import type { FC } from "react";
 
 const Presentacion: FC = () => {
   const { t } = useTranslation();
-  const texts = [t("text1"), t("text2")];
 
   return (
     <section className="presentacion-container">
@@ -40,10 +38,6 @@ const Presentacion: FC = () => {
           <p className="profesion">{t("profession")}</p>
 
           <h1 className="nombre">{t("welcome")}</h1>
-
-          <div className="descripcion">
-            <TextCycle texts={texts} interval={100} pause={1000} />
-          </div>
 
           {/* BOTÓN PRINCIPAL CV */}
           <div className="hero-actions">

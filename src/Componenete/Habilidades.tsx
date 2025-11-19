@@ -1,135 +1,111 @@
 import "../Style/Habilidades.css";
-import css3 from "../assets/css.png";
-import html5 from "../assets/html.png";
-import js from "../assets/javascript.png";
-import typeScript from "../assets/typescript.png";
-import bootstrap from "../assets/svg/bootstrap.svg";
-import material from "../assets/svg/material-ui.svg";
-import react from "../assets/svg/react.svg";
-import php from "../assets/svg/phpfont.svg";
-import laravel from "../assets/svg/laravel.png";
-import mysql from "../assets/svg/mysql.svg";
-import node from "../assets/svg/node.svg";
-import git from "../assets/svg/git.svg";
-import vite from "../assets/svg/Vite.svg";
 import { useTranslation } from "react-i18next";
 
-type Skill = {
-  key: string;
-  src: string;
+type SkillItem = {
+  name: string;
+  icon: string;
+};
+
+type SkillGroup = {
+  id: string;
+  title: string; // incluye el emoji del título
+  delay: number;
+  skills: SkillItem[];
 };
 
 function Habilidades() {
   const { t } = useTranslation();
 
-  const frontEndSkills: Skill[] = [
-    { key: "css", src: css3 },
-    { key: "html", src: html5 },
-    { key: "javascript", src: js },
-    { key: "bootstrap", src: bootstrap },
-    { key: "material_ui", src: material },
-    { key: "react", src: react },
-  ];
-
-  const backEndSkills: Skill[] = [
-    { key: "typescript", src: typeScript },
-    { key: "php", src: php },
-    { key: "mysql", src: mysql },
-    { key: "laravel", src: laravel },
-    { key: "node", src: node },
-  ];
-
-  const complementSkills: Skill[] = [
-    { key: "git", src: git },
-    { key: "vite", src: vite },
+  const groups: SkillGroup[] = [
+    {
+      id: "web",
+      title: "💻 Desarrollo Web",
+      delay: 100,
+      skills: [
+        { name: "React", icon: "⚛️" },
+        { name: "TypeScript", icon: "📘" },
+        { name: "JavaScript", icon: "⚡" },
+        { name: "HTML", icon: "📄" },
+        { name: "CSS", icon: "🎨" },
+        { name: "Bootstrap", icon: "🅱️" },
+        { name: "PHP", icon: "🐘" },
+        { name: "Laravel", icon: "🔺" },
+        { name: "MySQL", icon: "🗄️" },
+        { name: "Node.js", icon: "🟢" },
+      ],
+    },
+    {
+      id: "data",
+      title: "📊 Ciencia de Datos",
+      delay: 200,
+      skills: [
+        { name: "Python", icon: "🐍" },
+        { name: "Pandas", icon: "🐼" },
+        { name: "NumPy", icon: "🔢" },
+        { name: "Jupyter", icon: "📓" },
+        { name: "Matplotlib", icon: "📈" },
+        { name: "Scikit-learn", icon: "🤖" },
+      ],
+    },
+    {
+      id: "mobile",
+      title: "📱 Desarrollo Mobile",
+      delay: 300,
+      skills: [
+        { name: "Flutter", icon: "🎯" },
+        { name: "Dart", icon: "🎪" },
+        { name: "Firebase", icon: "🔥" },
+        { name: "Android", icon: "🤖" },
+        { name: "iOS", icon: "🍎" },
+      ],
+    },
+    {
+      id: "tools",
+      title: "🛠️ Herramientas",
+      delay: 400,
+      skills: [
+        { name: "Git", icon: "🔀" },
+        { name: "GitHub", icon: "🐙" },
+        { name: "VS Code", icon: "💻" },
+        { name: "Vite", icon: "⚡" },
+        { name: "Docker", icon: "🐳" },
+        { name: "Postman", icon: "📮" },
+      ],
+    },
   ];
 
   return (
     <div className="skills-section">
       <div className="skills-container">
-        {/* Título principal */}
+        {/* Título principal (usa tu i18n; si no existe la key usa HABILIDADES) */}
         <h2 className="skills-title animate-fade-in">
-          {t("skills") /* Ej: HABILIDADES */}
+          {t("skills", "HABILIDADES")}
         </h2>
 
-        <div className="skills-grid">
-          {/* Front-end */}
-          <div
-            className="skills-column animate-fade-in"
-            style={{ animationDelay: "100ms" }}
-          >
-            <h3 className="skills-column-title">{t("frontend")}</h3>
-            <div className="skills-cards-grid">
-              {frontEndSkills.map((skill, index) => (
-                <div
-                  key={skill.key}
-                  className="skill-card"
-                  style={{ animationDelay: `${(index + 1) * 100}ms` }}
-                >
-                  <div className="skill-icon-wrapper">
-                    <img
-                      src={skill.src}
-                      alt={t(skill.key)}
-                      className="skill-icon-image"
-                    />
-                  </div>
-                  <p className="skill-name">{t(skill.key)}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* Grid de 2 columnas en desktop (como el snippet md:grid-cols-2) */}
+        <div className="skills-grid-4">
+          {groups.map((group) => (
+            <div
+              key={group.id}
+              className="skills-group animate-fade-in"
+              style={{ animationDelay: `${group.delay}ms` }}
+            >
+              <h3 className="skills-group-title">{group.title}</h3>
 
-          {/* Back-end */}
-          <div
-            className="skills-column animate-fade-in"
-            style={{ animationDelay: "200ms" }}
-          >
-            <h3 className="skills-column-title">{t("backend")}</h3>
-            <div className="skills-cards-grid">
-              {backEndSkills.map((skill, index) => (
-                <div
-                  key={skill.key}
-                  className="skill-card"
-                  style={{ animationDelay: `${(index + 1) * 100}ms` }}
-                >
-                  <div className="skill-icon-wrapper">
-                    <img
-                      src={skill.src}
-                      alt={t(skill.key)}
-                      className="skill-icon-image"
-                    />
+              <div className="skills-items-grid">
+                {group.skills.map((skill, index) => (
+                  <div
+                    key={skill.name}
+                    className="skills-item-card"
+                    style={{ animationDelay: `${(index + 1) * 50}ms` }}
+                  >
+                    <div className="skills-item-icon">{skill.icon}</div>
+                    <p className="skills-item-name">{skill.name}</p>
                   </div>
-                  <p className="skill-name">{t(skill.key)}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-
-          {/* Complementos */}
-          <div
-            className="skills-column animate-fade-in"
-            style={{ animationDelay: "300ms" }}
-          >
-            <h3 className="skills-column-title">{t("complements")}</h3>
-            <div className="skills-cards-grid">
-              {complementSkills.map((skill, index) => (
-                <div
-                  key={skill.key}
-                  className="skill-card"
-                  style={{ animationDelay: `${(index + 1) * 100}ms` }}
-                >
-                  <div className="skill-icon-wrapper">
-                    <img
-                      src={skill.src}
-                      alt={t(skill.key)}
-                      className="skill-icon-image"
-                    />
-                  </div>
-                  <p className="skill-name">{t(skill.key)}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
