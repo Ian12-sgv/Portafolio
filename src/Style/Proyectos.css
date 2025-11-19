@@ -8,11 +8,11 @@
   align-items: flex-start; /* pegado un poco más arriba */
   justify-content: center;
   padding: 3rem 1.5rem 2.5rem;
-  background: radial-gradient(
+  /*background: radial-gradient(
     circle at top left,
     rgba(148, 237, 233, 0.16),
     #020617 45%
-  );
+  );*/
   background-color: #020617;
 }
 
