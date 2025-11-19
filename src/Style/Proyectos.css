@@ -1,24 +1,24 @@
 /* =========================
-   Sección Proyectos – estilo Lovable
+   Sección Proyectos – estilo Lovable con carrusel
    ========================= */
 
 .projects-section {
   min-height: 100vh;
   display: flex;
-  align-items: flex-start; /* 👈 ahora se pega más arriba */
+  align-items: flex-start; /* pegado un poco más arriba */
   justify-content: center;
-  padding: 3rem 1.5rem 2.5rem; /* un poco menos de margen arriba/abajo */
-  /*background: radial-gradient(
+  padding: 3rem 1.5rem 2.5rem;
+  background: radial-gradient(
     circle at top left,
     rgba(148, 237, 233, 0.16),
     #020617 45%
-  );*/
+  );
   background-color: #020617;
 }
 
 @media (min-width: 768px) {
   .projects-section {
-    padding: 2rem;
+    padding: 3.5rem 2rem 3rem;
   }
 }
 
@@ -95,7 +95,7 @@
 }
 
 /* =========================
-   Carrusel manual
+   Carrusel (Embla)
    ========================= */
 
 .projects-carousel-wrapper {
@@ -103,19 +103,66 @@
   margin-top: 0.5rem;
 }
 
+/* Clases “utilidad” que usa Carousel.tsx (simulan Tailwind) */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+}
+
+.-ml-4 {
+  margin-left: -1rem;
+}
+.-mt-4 {
+  margin-top: -1rem;
+}
+.flex-col {
+  flex-direction: column;
+}
+.pl-4 {
+  padding-left: 1rem;
+}
+.pt-4 {
+  padding-top: 1rem;
+}
+.min-w-0 {
+  min-width: 0;
+}
+.shrink-0 {
+  flex-shrink: 0;
+}
+.grow-0 {
+  flex-grow: 0;
+}
+.basis-full {
+  flex-basis: 100%;
+}
+
+/* Slides del carrusel */
+
+.projects-carousel {
+  /* la clase .flex ya pone display:flex */
+}
+
 .projects-slider-track {
   display: flex;
   gap: 1.5rem;
 }
 
+/* Por defecto (móviles y tablets): 1 tarjeta por vista */
 .project-slide {
-  flex: 1 1 0;
-  min-width: 0;
+  flex: 0 0 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-  .projects-slider-track {
-    flex-direction: column;
+/* Escritorio ancho: 2 tarjetas por vista */
+@media (min-width: 900px) {
+  .project-slide {
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 }
 
@@ -347,11 +394,6 @@
   z-index: 5;
 }
 
-.projects-arrow-icon {
-  width: 1rem;
-  height: 1rem;
-}
-
 .projects-arrow:hover:enabled {
   background-color: hsl(var(--primary, 173 58% 48%));
   color: hsl(var(--primary-foreground, 0 0% 100%));
@@ -364,6 +406,7 @@
   cursor: default;
 }
 
+/* posición escritorio */
 .projects-arrow-prev {
   left: -2.5rem;
 }
@@ -372,10 +415,17 @@
   right: -2.5rem;
 }
 
+/* posición en móviles: flechas pegadas a los lados y un poco más pequeñas */
 @media (max-width: 768px) {
+  .projects-arrow {
+    width: 2rem;
+    height: 2rem;
+  }
+
   .projects-arrow-prev {
     left: 0.3rem;
   }
+
   .projects-arrow-next {
     right: 0.3rem;
   }
