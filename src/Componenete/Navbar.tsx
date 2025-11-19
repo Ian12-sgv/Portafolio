@@ -44,22 +44,32 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
 
   const isMenuVisible = isOpen || isClosing;
 
+  // helper: obtener altura real del navbar (+ pequeño margen)
+  // helper: obtener altura real del navbar (+ margen extra para que
+  // nunca se vea la sección anterior pegada al borde inferior del navbar)
+  const getHeaderOffset = () => {
+    const nav = document.querySelector(".navbar") as HTMLElement | null;
+    if (!nav) return 120; // fallback cómodo
+
+    const navHeight = nav.offsetHeight; // alto real del navbar
+    const extraMargin = 0; // espacio adicional bajo el navbar
+
+    return navHeight + extraMargin;
+  };
+
   // === Scroll spy (sección activa) ===
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll<HTMLElement>("section[id]");
       const scrollPos = window.scrollY;
+      const headerOffset = getHeaderOffset();
       let currentSection = activeSection;
 
       sections.forEach((section) => {
-        const offsetTop = section.offsetTop;
-        const height = section.offsetHeight;
+        const sectionTop = section.offsetTop - headerOffset;
+        const sectionBottom = sectionTop + section.offsetHeight;
 
-        // margen para compensar la altura del header
-        if (
-          scrollPos >= offsetTop - 120 &&
-          scrollPos < offsetTop + height - 120
-        ) {
+        if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
           currentSection = section.id;
         }
       });
@@ -126,7 +136,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
       return;
     }
 
-    const headerOffset = 120; // altura aproximada del navbar
+    const headerOffset = getHeaderOffset();
     const rect = el.getBoundingClientRect();
     const offset = rect.top + window.scrollY - headerOffset;
 

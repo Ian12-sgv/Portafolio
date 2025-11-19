@@ -4,16 +4,19 @@
 
 /* Contenedor de la sección completa */
 .skills-section {
-  /*min-height: 100vh;*/
+  min-height: calc(
+    100vh - 80px
+  ); /* opcional, para que la sección llene la pantalla */
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* antes: center */
   justify-content: center;
-  padding: 3rem 1.5rem;
+  padding: 2.5rem 1.5rem 3rem; /* un poco menos aire arriba */
   background: radial-gradient(
     circle at top left,
     rgba(148, 237, 233, 0.16),
     hsl(var(--background)) 45%
   );
+  background-color: #07152c;
 }
 
 /* Contenedor interno (ancho máximo) */

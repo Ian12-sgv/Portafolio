@@ -12,9 +12,9 @@ html {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(2, 6, 23, 0.82); /* bg-background/80 aprox */
+  /*background: rgba(2, 6, 23, 0.82); /* bg-background/80 aprox */
   backdrop-filter: blur(16px); /* backdrop-blur-lg */
-  border-bottom: 1px solid rgba(148, 163, 184, 0.5); /* border-border/50 */
+  border-bottom: 0.1px solid #192d4d; /* border-border/50 */
   animation: nav-fade-in 0.4s ease-out;
   color: var(--text-color);
 }

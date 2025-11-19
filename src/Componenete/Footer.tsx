@@ -1,3 +1,4 @@
+// src/Componenete/Footer.tsx
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
@@ -7,28 +8,73 @@ import {
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
+  const year = new Date().getFullYear();
+
+  const socialLinks = [
+    {
+      label: "GitHub",
+      href: "https://github.com/Ian12-sgv",
+      icon: faGithub,
+    },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/ian-bonillo",
+      icon: faLinkedin,
+    },
+    {
+      label: "Email",
+      href: "mailto:ianbonillo@gmail.com",
+      icon: faEnvelope,
+    },
+    {
+      label: "WhatsApp",
+      href: "https://wa.me/584126665102",
+      icon: faWhatsapp,
+    },
+  ];
+
   return (
-    <div className="contact">
-      <a
-        href="https://github.com/Ian12-sgv"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FontAwesomeIcon icon={faGithub} size="2x" className="icon-footer" />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/ian-bonillo"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FontAwesomeIcon icon={faLinkedin} size="2x" className="icon-footer" />
-      </a>
-      <a href="mailto:ianbonillo@gmail.com">
-        <FontAwesomeIcon icon={faEnvelope} size="2x" className="icon-footer" />
-      </a>
-      <a href="https://wa.me/584126665102">
-        <FontAwesomeIcon icon={faWhatsapp} size="2x" className="icon-footer" />
-      </a>
+    <div className="footer-content">
+      {/* Grid principal */}
+      <div className="footer-grid">
+        {/* Nombre y título */}
+        <div className="footer-name-block">
+          <h3 className="footer-name">Ian Franco Bonillo</h3>
+          <p className="footer-role">Desarrollador Full-Stack</p>
+        </div>
+
+        {/* Redes sociales */}
+        <div className="footer-social">
+          {socialLinks.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+              aria-label={social.label}
+            >
+              <FontAwesomeIcon
+                icon={social.icon}
+                className="footer-social-icon"
+              />
+            </a>
+          ))}
+        </div>
+
+        {/* Copyright */}
+        <div className="footer-copy-block">
+          <p className="footer-copy">© {year} Ian Franco Bonillo</p>
+          <p className="footer-copy-small">Todos los derechos reservados</p>
+        </div>
+      </div>
+
+      {/* Línea inferior */}
+      <div className="footer-divider">
+        <p className="footer-made">
+          Hecho con <span className="footer-heart">❤️</span> y React
+        </p>
+      </div>
     </div>
   );
 }

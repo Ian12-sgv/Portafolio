@@ -3,7 +3,7 @@
    ========================= */
 
 .projects-section {
-  min-height: 100%;
+  min-height: calc(100vh - 90px); /* mismo número que scroll-margin-top */
   display: flex;
   align-items: center;
   justify-content: center;

@@ -3,12 +3,12 @@
    ========================= */
 
 .formacion-section {
-  min-height: 80vh;
+  min-height: calc(100vh - 90px); /* mismo número que scroll-margin-top */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 3rem 1.5rem;
-  background: radial-gradient(
+  /*background: radial-gradient(
       circle at top left,
       rgba(148, 237, 233, 0.18),
       transparent 50%
@@ -18,7 +18,8 @@
       hsl(var(--background)),
       hsl(var(--background)),
       hsl(var(--card))
-    );
+    );*/
+  background-color: #07152c;
 }
 
 .formacion-container {
@@ -91,7 +92,7 @@
 
 .form-card:hover {
   border-color: hsl(var(--primary));
-  box-shadow: 0 18px 40px -18px rgba(32, 218, 216, 0.35);
+  /*box-shadow: 0 18px 40px -18px rgba(32, 218, 216, 0.35);*/
   transform: translateY(-3px);
 }
 

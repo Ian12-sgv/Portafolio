@@ -57,6 +57,10 @@ function App() {
           <Formacion />
         </section>
       </main>
+
+      <footer className="footer">
+        <Footer />
+      </footer>
     </div>
   );
 }
