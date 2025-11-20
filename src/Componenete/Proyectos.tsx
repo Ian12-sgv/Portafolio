@@ -86,18 +86,33 @@ function Proyectos() {
   const [projectFilter, setProjectFilter] = useState<ProjectType>("todos");
   const [page, setPage] = useState<number>(0);
 
+  // === tarjetas por página (responsive) ===
+  const [itemsPerPage, setItemsPerPage] = useState<number>(() => {
+    if (typeof window === "undefined") return 1;
+    return window.innerWidth < 900 ? 1 : 2; // móvil 1, escritorio 2
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      const next = window.innerWidth < 900 ? 1 : 2;
+      setItemsPerPage(next);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const filteredProjects = projects.filter((project) =>
     projectFilter === "todos" ? true : project.type === projectFilter
   );
 
-  // cuántas cards por "slide"
-  const itemsPerPage = 2;
   const totalPages = Math.max(
     1,
     Math.ceil(filteredProjects.length / itemsPerPage)
   );
 
-  // por si cambiamos el filtro, volvemos a la primera página
+  // si cambias de filtro, siempre volvemos a la primera página
   useEffect(() => {
     setPage(0);
   }, [projectFilter]);
@@ -172,7 +187,7 @@ function Proyectos() {
               <ArrowLeft className="projects-arrow-icon" />
             </button>
 
-            {/* Slide actual (1 o 2 cards) */}
+            {/* Slide actual (1 en móvil, 2 en escritorio) */}
             <div className="projects-slider-track">
               {visibleProjects.map((project, index) => (
                 <div key={project.id} className="project-slide">

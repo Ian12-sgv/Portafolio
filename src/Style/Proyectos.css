@@ -5,15 +5,11 @@
 .projects-section {
   min-height: 100vh;
   display: flex;
-  align-items: flex-start; /* pegado un poco más arriba */
+  align-items: flex-start; /* un poco más arriba */
   justify-content: center;
   padding: 3rem 1.5rem 2.5rem;
-  /*background: radial-gradient(
-    circle at top left,
-    rgba(148, 237, 233, 0.16),
-    #020617 45%
-  );*/
   background-color: #020617;
+  overflow-x: hidden; /* evita scroll horizontal en móviles */
 }
 
 @media (min-width: 768px) {
@@ -101,17 +97,21 @@
 .projects-carousel-wrapper {
   position: relative;
   margin-top: 0.5rem;
+  max-width: 100%;
 }
 
-/* Clases “utilidad” que usa Carousel.tsx (simulan Tailwind) */
+/* Viewport del carrusel (primer div de CarouselContent) */
 .overflow-hidden {
   overflow: hidden;
+  width: 100%;
 }
 
+/* Track del carrusel (segundo div de CarouselContent) */
 .flex {
   display: flex;
 }
 
+/* utilidades que usa Carousel.tsx (simulan Tailwind) */
 .-ml-4 {
   margin-left: -1rem;
 }
@@ -140,15 +140,19 @@
   flex-basis: 100%;
 }
 
-/* Slides del carrusel */
-
+/* sobrescribimos cosas del track para que NO se desborde */
 .projects-carousel {
-  /* la clase .flex ya pone display:flex */
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: 0; /* anula -ml-4 */
 }
+
+/* Slides del carrusel */
 
 .projects-slider-track {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  justify-content: center; /* centramos las cards */
 }
 
 /* Por defecto (móviles y tablets): 1 tarjeta por vista */
@@ -156,16 +160,16 @@
   flex: 0 0 100%;
   max-width: 100%;
   box-sizing: border-box;
+  padding-left: 0;
 }
 
 /* Escritorio ancho: 2 tarjetas por vista */
 @media (min-width: 900px) {
   .project-slide {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
   }
 }
-
 /* =========================
    Card de proyecto
    ========================= */
@@ -177,7 +181,6 @@
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  /*height: 100%;*/
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transform: translateY(0);
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease,
