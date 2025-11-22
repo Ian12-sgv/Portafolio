@@ -186,7 +186,7 @@ body.dark-mode .projects-section {
 
 .project-card {
   flex: 1;
-  height: 100%;
+
   background-color: hsl(var(--card, 217 71% 10%));
   border: 2px solid hsl(var(--border, 217 30% 85%));
   border-radius: 1rem;
@@ -316,6 +316,7 @@ body.dark-mode .project-card {
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .project-tech-badge {
