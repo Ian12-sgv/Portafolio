@@ -159,7 +159,8 @@ body.dark-mode .projects-section {
 .projects-slider-track {
   display: flex;
   gap: 1rem;
-  justify-content: center; /* centramos las cards */
+  justify-content: center;
+  align-items: stretch; /* <- importante */
 }
 
 /* Por defecto (móviles y tablets): 1 tarjeta por vista */
@@ -168,9 +169,10 @@ body.dark-mode .projects-section {
   max-width: 100%;
   box-sizing: border-box;
   padding-left: 0;
+  display: flex; /* <- clave */
 }
-
 /* Escritorio ancho: 2 tarjetas por vista */
+
 @media (min-width: 900px) {
   .project-slide {
     flex: 0 0 calc(50% - 0.5rem);
@@ -183,6 +185,8 @@ body.dark-mode .projects-section {
    ========================= */
 
 .project-card {
+  flex: 1;
+  height: 100%;
   background-color: hsl(var(--card, 217 71% 10%));
   border: 2px solid hsl(var(--border, 217 30% 85%));
   border-radius: 1rem;

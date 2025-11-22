@@ -7,6 +7,11 @@ import Portafolio from "../assets/Portafolio.png";
 import Binance from "../assets/binance.png";
 import Suscripcion from "../assets/Suscripciones.png";
 import Convertidor from "../assets/convertidor.png";
+import Precios from "../assets/Precios.jpeg";
+import Existencia from "../assets/existencia.jpeg";
+import rotacion from "../assets/rotacion.jpeg";
+import consultor from "../assets/consultor.jpeg";
+import wizard from "../assets/wizard.png";
 
 import { useTranslation } from "react-i18next";
 import { ExternalLink, Github, ArrowLeft, ArrowRight } from "lucide-react";
@@ -80,6 +85,68 @@ const projects: Project[] = [
     techKeys: ["react", "material-ui", "API REST"],
     demoUrl: "https://convertidor-de-divisas.netlify.app/",
     githubUrl: "https://github.com/Ian12-sgv/convertidor",
+  },
+  {
+    id: "precios-tienda",
+    type: "trabajo",
+    image: Precios,
+    emoji: "",
+    titleKey: "Precios",
+    descKey:
+      "Plataforma web responsiva que permite a los clientes consultar en tiempo real el listado y precios actualizados de los productos de la tienda",
+    techKeys: [
+      "react",
+      "typescript",
+      "node.js",
+      "express",
+      "sql server",
+      "api rest(c#)",
+    ],
+    demoUrl: "https://precioblumer.netlify.app/",
+  },
+  {
+    id: "Existencia de productos",
+    type: "trabajo",
+    image: Existencia,
+    emoji: "",
+    titleKey: "Existencia",
+    descKey:
+      "Apliacion android para la gestión de inventarios en tiendas, permitiendo a los administradore registrar entradas y salidas de productos mediante códigos de barras, sincronizando datos con el sistema central para mantener un control actualizado del stock.",
+    techKeys: ["dart", "flutter", "c#", "python", "sql server"],
+    demoUrl: "/apk/app-release.apk",
+  },
+  {
+    id: "rotacion",
+    type: "trabajo",
+    image: rotacion,
+    emoji: "",
+    titleKey: "Rotacion",
+    descKey: "...",
+    techKeys: ["python", "customtkinter", "sql server"],
+    demoUrl: "https://github.com/Ian12-sgv/rotaci-n-de-inventario-con-python",
+    githubUrl: "https://github.com/Ian12-sgv/rotaci-n-de-inventario-con-python",
+  },
+  {
+    id: "consultor",
+    type: "trabajo",
+    image: consultor,
+    emoji: "",
+    titleKey: "Consultor",
+    descKey: "Consulto de base de base de datos para SQL Server ",
+    techKeys: ["python", "customtkinter", "sql server"],
+    demoUrl: "https://github.com/Ian12-sgv/banco-de-consulta",
+    githubUrl: "https://github.com/Ian12-sgv/banco-de-consulta",
+  },
+  {
+    id: "wizard",
+    type: "trabajo",
+    image: wizard,
+    emoji: "",
+    titleKey: "Wizard",
+    descKey: "Wizard para migrar bases de datos SQL Server a MySQL",
+    techKeys: ["python"],
+    demoUrl: "https://github.com/Ian12-sgv/wizar-de-sql-server-a-mysql",
+    githubUrl: "https://github.com/Ian12-sgv/wizar-de-sql-server-a-mysql",
   },
 ];
 
