@@ -121,7 +121,8 @@ const projects: Project[] = [
     image: rotacion,
     emoji: "",
     titleKey: "Rotacion",
-    descKey: "...",
+    descKey:
+      "Rotación de inventario para SQL Server(solo con una consulta específica)",
     techKeys: ["python", "customtkinter", "sql server"],
     demoUrl: "https://github.com/Ian12-sgv/rotaci-n-de-inventario-con-python",
     githubUrl: "https://github.com/Ian12-sgv/rotaci-n-de-inventario-con-python",
