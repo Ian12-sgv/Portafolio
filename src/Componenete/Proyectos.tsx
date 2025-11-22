@@ -35,7 +35,7 @@ const projects: Project[] = [
     descKey: "food_truck_desc",
     techKeys: ["react", "typescript"],
     demoUrl: "https://camiondecomida.netlify.app/",
-    githubUrl: "https://github.com/Ian12-sgv/food-truck",
+    githubUrl: "https://github.com/Ian12-sgv/food",
   },
   {
     id: "portfolio",
@@ -46,7 +46,7 @@ const projects: Project[] = [
     descKey: "portfolio_desc",
     techKeys: ["react", "typescript"],
     demoUrl: "https://ianfranco.netlify.app/",
-    githubUrl: "https://github.com/Ian12-sgv/portfolio",
+    githubUrl: "https://github.com/Ian12-sgv/Portafolio",
   },
   {
     id: "binance",
@@ -57,6 +57,7 @@ const projects: Project[] = [
     descKey: "binanance",
     techKeys: ["react", "typescript", "api", "chart.js"],
     demoUrl: "https://api-binance-estadistica.netlify.app",
+    githubUrl: "https://github.com/Ian12-sgv/binance",
   },
   {
     id: "suscription",
@@ -67,6 +68,7 @@ const projects: Project[] = [
     descKey: "suscripcion",
     techKeys: ["react", "typescript"],
     demoUrl: "https://costo-suscripciones.netlify.app/",
+    githubUrl: "https://github.com/Ian12-sgv/Portafolio",
   },
   {
     id: "converter",
@@ -77,6 +79,7 @@ const projects: Project[] = [
     descKey: "convertidor",
     techKeys: ["react", "material-ui", "API REST"],
     demoUrl: "https://convertidor-de-divisas.netlify.app/",
+    githubUrl: "https://github.com/Ian12-sgv/convertidor",
   },
 ];
 
