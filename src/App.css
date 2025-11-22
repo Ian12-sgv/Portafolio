@@ -1,25 +1,13 @@
 /* =========================
-   Variables globales
+   Variables no relacionadas con tema
    ========================= */
 
 :root {
-  --primary-bg-color: #020617; /* fondo base oscuro */
-  --primary-bg-color-light: #e1e8fe; /* fondo cuando activas "dark-mode" (tema claro) */
-
-  --border-color: #1f2933;
-  --border-color-light: #cbd5f5;
-
-  --footer-bg-color: #020617;
-  --footer-bg-color-light: #e1e8fe;
-
-  --text-color: #e2e8f0;
-  --text-color-light: #4774b8;
-
   --contact-padding: 12px;
 }
 
 /* =========================
-   Body / tema
+   Body / tema (usa variables de index.css)
    ========================= */
 
 body {
@@ -27,29 +15,13 @@ body {
   min-height: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
+
+  /* El gradiente cambia solo con --gradient-hero,
+     que actualizamos en index.css según el tema */
+  background: var(--gradient-hero);
   color: var(--text-color);
 
-  /* fondo general del sitio */
-  background: radial-gradient(
-    circle at top left,
-    #02091f 0,
-    #020617 40%,
-    #020617 100%
-  );
-  background-color: var(--primary-bg-color);
-
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* OJO: en tu lógica actual "dark-mode" significa tema CLARO */
-body.dark-mode {
-  --primary-bg-color: var(--primary-bg-color-light);
-  --border-color: var(--border-color-light);
-  --footer-bg-color: var(--footer-bg-color-light);
-  --text-color: var(--text-color-light);
-
-  background: var(--primary-bg-color);
-  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* =========================
@@ -70,10 +42,7 @@ body.dark-mode {
   flex-direction: column;
 }
 
-/* cada sección ocupa el ancho completo;
-   los paddings/márgenes se manejan en sus propios CSS */
-/* Cada sección principal de la página */
-/* Presentación: hero, un poco más de aire arriba */
+/* Presentación: hero */
 .presentacion {
   width: 100%;
   min-height: 100vh;
@@ -82,20 +51,16 @@ body.dark-mode {
   box-sizing: border-box;
 }
 
-/* Resto de secciones: SIN padding extra arriba */
+/* Resto de secciones */
 .habilidades,
 .proyectos,
 .formacion {
   width: 100%;
   min-height: 100vh;
-  scroll-margin-top: 80px; /* mismo offset para el ancla */
-  padding-top: 0; /* <- importante */
+  scroll-margin-top: 80px;
+  padding-top: 0;
   box-sizing: border-box;
 }
-
-/* =========================
-   Footer
-   ========================= */
 
 /* =========================
    FOOTER – estilo Lovable
@@ -112,14 +77,12 @@ body.dark-mode {
   );
 }
 
-/* Contenedor interno: max-w-6xl mx-auto px-4 md:px-8 py-12 */
 .footer-content {
-  max-width: 1200px; /* ~6xl */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
 }
 
-/* Grid principal: md:grid-cols-3 */
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -192,14 +155,12 @@ body.dark-mode {
 .footer-social-icon {
   width: 1.5rem;
   height: 1.5rem;
-  /* iconos SIEMPRE blancos por defecto */
   color: var(--text-color);
   transition: color 0.3s ease;
 }
 
-/* en hover, el icono pasa a oscuro (sobre el fondo turquesa) */
 .footer-social-link:hover .footer-social-icon {
-  color: #ffffff; /* o el color que quieras para el icono en hover */
+  color: #ffffff;
 }
 
 /* Copyright */
@@ -244,7 +205,7 @@ body.dark-mode {
 }
 
 /* =========================
-   Responsive
+   Responsive footer
    ========================= */
 
 @media (max-width: 768px) {

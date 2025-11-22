@@ -1,32 +1,114 @@
+/* =========================
+   TEMA GLOBAL (oscuro + claro)
+   ========================= */
+
+/* Por defecto: tema OSCURO */
 :root {
-  --primary-bg-color: #01081f;
-  --text-color: white;
-  --primary-bg-color-light: #e1e8fe;
-  --text-color-light: #4774b8;
+  /* Paleta base en HSL (oscuro) */
+  --background: 217 91% 6%;
+  --foreground: 180 100% 95%;
+
+  --card: 217 71% 10%;
+  --card-foreground: 180 100% 95%;
+
+  --primary: 173 58% 48%;
+  --primary-foreground: 217 91% 6%;
+
+  --secondary: 142 71% 45%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 217 50% 15%;
+  --muted-foreground: 180 10% 65%;
+
+  --accent: 173 58% 48%;
+  --accent-foreground: 217 91% 6%;
+
+  --border: 217 50% 20%;
+  --input: 217 50% 15%;
+  --ring: 173 58% 48%;
+
+  --radius: 0.75rem;
+
+  /* Gradiente de fondo (oscuro) */
+  --gradient-hero: linear-gradient(135deg, hsl(217 91% 6%), hsl(217 71% 10%));
+
+  /* ===== Puente con nombres que ya usas ===== */
+  --primary-bg-color: hsl(var(--background));
+  --text-color: hsl(var(--foreground));
+
+  /* Extras usados en Presentacion / iconos */
+  --accent-color: hsl(var(--primary));
+  --text-muted: hsl(var(--muted-foreground));
+  --available-bg-color: #16a34a;
+  --available-text-color: #ffffff;
+  /* ICONOS en TEMA OSCURO (por defecto) → BLANCOS */
+  --icon-color: #f9fafb;
+  --icon-bg: rgba(15, 23, 42, 0.85);
+  --border-soft: rgba(148, 163, 184, 0.35);
+  --transition-fast: 0.25s ease;
 }
 
-body,
-html {
+/* Tema CLARO
+   (OJO: en tu lógica actual, body.dark-mode = tema CLARO) */
+body.dark-mode {
+  --background: 210 15% 92%;
+  --foreground: 217 40% 20%;
+
+  --card: 210 20% 96%;
+  --card-foreground: 217 40% 20%;
+
+  --primary: 173 45% 42%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 142 50% 40%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 210 25% 88%;
+  --muted-foreground: 217 25% 35%;
+
+  --accent: 173 40% 45%;
+  --accent-foreground: 0 0% 100%;
+
+  --border: 217 20% 82%;
+  --input: 217 20% 86%;
+  --ring: 173 45% 42%;
+
+  /* Gradiente claro como el del diseño de Lovable */
+  --gradient-hero: linear-gradient(135deg, hsl(210 25% 94%), hsl(173 35% 90%));
+
+  /* Puente */
+  --primary-bg-color: hsl(var(--background));
+  --text-color: hsl(var(--foreground));
+
+  /* ICONOS en TEMA CLARO → OSCUROS */
+  --icon-color: hsl(217 40% 20%);
+  --icon-bg: hsl(var(--card));
+  --border-soft: hsl(var(--border));
+}
+
+/* =========================
+   Reset / base
+   ========================= */
+
+html,
+body {
   margin: 0;
   padding: 0;
-  background-color: var(--primary-bg-color);
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s, color 0.3s;
-  color: var(--text-color);
+  scroll-behavior: smooth;
 }
 
-body.dark-mode {
-  --primary-bg-color: #e1e8fe;
-  --text-color: #4774b8;
-  background-color: var(--primary-bg-color);
-  color: var(--text-color);
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition: background-color 0.3s, color 0.3s;
 }
 
 code {

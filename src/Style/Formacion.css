@@ -8,18 +8,12 @@
   align-items: center;
   justify-content: center;
   padding: 3rem 1.5rem;
-  /*background: radial-gradient(
-      circle at top left,
-      rgba(148, 237, 233, 0.18),
-      transparent 50%
-    ),
-    linear-gradient(
-      135deg,
-      hsl(var(--background)),
-      hsl(var(--background)),
-      hsl(var(--card))
-    );*/
-  background-color: #07152c;
+
+  /* Usa la misma variable que HABILIDADES (sección secundaria)
+     Oscuro  -> #07152c
+     Claro   -> #e8ebee  (definido en index.css como --section-secondary-bg)
+  */
+  background-color: var(--section-secondary-bg);
 }
 
 .formacion-container {
@@ -80,7 +74,11 @@
    ========================= */
 
 .form-card {
-  background-color: hsl(var(--background));
+  /* Ahora usamos la variable de tarjeta global:
+     Oscuro -> card oscuro
+     Claro  -> card clarita (#f3f5f7 aprox)
+  */
+  background-color: hsl(var(--card));
   border: 2px solid hsl(var(--border));
   border-radius: 0.85rem;
   padding: 1.25rem 1.5rem;

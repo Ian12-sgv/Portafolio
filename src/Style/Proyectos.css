@@ -8,8 +8,15 @@
   align-items: flex-start; /* un poco más arriba */
   justify-content: center;
   padding: 3rem 1.5rem 2.5rem;
-  background-color: #020617;
+
+  /* Ahora usamos la variable global por sección */
+  background-color: var(--section-primary-bg);
+
   overflow-x: hidden; /* evita scroll horizontal en móviles */
+}
+
+body.dark-mode .projects-section {
+  background-color: #f3f5f7;
 }
 
 @media (min-width: 768px) {
@@ -170,6 +177,7 @@
     max-width: calc(50% - 0.5rem);
   }
 }
+
 /* =========================
    Card de proyecto
    ========================= */
@@ -186,6 +194,10 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease,
     background-color 0.3s ease;
   opacity: 0;
+}
+body.dark-mode .project-card {
+  background-color: #e8ebee; /* color de la card en Proyectos */
+  border-color: #c8cfda; /* opcional: mismo tono para el borde */
 }
 
 .project-card:hover {
@@ -385,8 +397,11 @@
   height: 2.3rem;
   border-radius: 999px;
   border: 1px solid hsl(var(--primary, 173 58% 48%));
-  background-color: rgba(15, 23, 42, 0.95);
+
+  /* usamos el color de card, para que cambie con el tema */
+  background-color: hsl(var(--card, 217 71% 10%));
   color: hsl(var(--primary, 173 58% 48%));
+
   display: flex;
   align-items: center;
   justify-content: center;

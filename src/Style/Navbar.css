@@ -12,9 +12,10 @@ html {
   left: 0;
   right: 0;
   z-index: 1000;
-  /*background: rgba(2, 6, 23, 0.82); /* bg-background/80 aprox */
+  /* si quieres fondo sólido, descomenta y ya respeta el tema:
+     background: hsl(var(--background) / 0.82); */
   backdrop-filter: blur(16px); /* backdrop-blur-lg */
-  border-bottom: 0.1px solid #192d4d; /* border-border/50 */
+  border-bottom: 0.1px solid hsl(var(--border)); /* border-border */
   animation: nav-fade-in 0.4s ease-out;
   color: var(--text-color);
 }
@@ -39,7 +40,8 @@ html {
 
 .navbar a {
   text-decoration: none;
-  color: rgba(248, 250, 252, 0.8); /* text-foreground/80 */
+  /* text-foreground/80 aprox, pero dependiente del tema */
+  color: hsl(var(--foreground) / 0.8);
 }
 
 /* ===== Enlaces (Inicio, Habilidades, Proyectos, Formación) ===== */
@@ -61,13 +63,13 @@ html {
   width: 0;
   height: 2px;
   border-radius: 999px;
-  background-color: #20dad8; /* primary */
+  background-color: hsl(var(--primary)); /* antes #20dad8 */
   transition: width 0.3s ease;
 }
 
 /* hover: color + línea de izquierda a derecha */
 .nav-links li a:hover {
-  color: #20dad8;
+  color: hsl(var(--primary));
 }
 
 .nav-links li a:hover::after {
@@ -76,7 +78,7 @@ html {
 
 /* enlace activo (scroll spy) */
 .nav-links a.active {
-  color: #20dad8;
+  color: hsl(var(--primary));
 }
 
 .nav-links a.active::after {
@@ -98,7 +100,7 @@ html {
 .theme-toggle-button {
   background: none;
   border: 1px solid transparent;
-  color: rgba(248, 250, 252, 0.9);
+  color: hsl(var(--foreground) / 0.9);
   cursor: pointer;
   padding: 0.35rem;
   border-radius: 999px;
@@ -118,9 +120,9 @@ html {
 
 /* hover igual a Lovable: fondo turquesa suave + rotación */
 .theme-toggle-button:hover {
-  background-color: rgba(32, 218, 216, 0.1); /* hover:bg-primary/10 */
-  color: #20dad8; /* hover:text-primary */
-  border-color: #20dad8;
+  background-color: hsl(var(--primary) / 0.1); /* hover:bg-primary/10 */
+  color: hsl(var(--primary)); /* hover:text-primary */
+  border-color: hsl(var(--primary));
   transform: translateY(-1px);
 }
 
@@ -169,14 +171,14 @@ html {
     justify-content: center;
     background: transparent; /* sin fondo */
     border: none; /* sin borde */
-    color: rgba(248, 250, 252, 0.9); /* mismo color que el texto */
+    color: hsl(var(--foreground) / 0.9);
     font-size: 1.4rem; /* tamaño del ícono (las 3 rayas) */
     cursor: pointer;
     padding: 0.25rem 0.35rem; /* área clickeable */
   }
 
   .floating-bubble:hover {
-    background-color: rgba(15, 23, 42, 0.9); /* ligero fondo al hover */
+    background-color: hsl(var(--background) / 0.9);
     border-radius: 999px;
   }
 
@@ -207,8 +209,8 @@ html {
     height: 100vh; /* cubre todo el alto de la pantalla */
     width: 70%; /* cubre el 70% del ancho */
     padding: 1.8rem 1.5rem;
-    background: #020617;
-    border-right: 1px solid rgba(148, 163, 184, 0.6);
+    background: hsl(var(--background));
+    border-right: 1px solid hsl(var(--border));
     border-radius: 0 12px 12px 0;
     display: flex;
     flex-direction: column;
@@ -229,7 +231,7 @@ html {
   }
 
   .nav-links.open a {
-    color: #e5e7eb;
+    color: hsl(var(--foreground));
     font-weight: 500;
   }
 
@@ -265,10 +267,10 @@ html {
     width: 34px;
     height: 34px;
     border-radius: 999px;
-    border: 2px solid #20dad8; /* círculo turquesa */
-    box-shadow: 0 0 0 2px rgba(32, 218, 216, 0.25); /* aro externo */
+    border: 2px solid hsl(var(--primary)); /* círculo turquesa */
+    box-shadow: 0 0 0 2px hsl(var(--primary) / 0.25); /* aro externo */
     background: transparent;
-    color: #e5e7eb;
+    color: hsl(var(--foreground));
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -278,9 +280,9 @@ html {
   }
 
   .nav-links.open .close-modal-btn:hover {
-    background-color: rgba(32, 218, 216, 0.12);
+    background-color: hsl(var(--primary) / 0.12);
     transform: scale(1.03);
-    box-shadow: 0 0 0 3px rgba(32, 218, 216, 0.4);
+    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.4);
   }
 }
 
@@ -346,7 +348,7 @@ html {
 .nav-overlay {
   position: fixed;
   inset: 0; /* top:0; right:0; bottom:0; left:0 */
-  background: rgba(15, 23, 42, 0.7);
+  background: hsl(var(--background) / 0.7);
   backdrop-filter: blur(2px);
   z-index: 1040; /* un poco menos que nav-links.open (1050) */
   display: none;
