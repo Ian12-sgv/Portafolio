@@ -69,6 +69,21 @@ function Formacion() {
               <div className="form-card-header">
                 <div className="form-card-icon">💼</div>
                 <div className="form-card-body">
+                  <p className="form-card-title">
+                    {t("Ingeniero de sistemas")}
+                  </p>
+                  <p className="form-card-text">
+                    {t("Palacio del blumer")} - 1 año
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Desarrollador Front-end */}
+            <div className="form-card">
+              <div className="form-card-header">
+                <div className="form-card-icon">💼</div>
+                <div className="form-card-body">
                   <p className="form-card-title">{t("frontend_dev")}</p>
                   <p className="form-card-text">{t("nerdcom")} - 6 meses</p>
                 </div>
